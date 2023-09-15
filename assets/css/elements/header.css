@@ -1,0 +1,21 @@
+/* #Header
+--------------------------------------------------------------- */
+#header {
+    width: 100%;
+    padding: 2rem 0;
+    position: relative;
+    background: linear-gradient(90deg, rgba(255, 227, 166, 1) 15%, rgba(195, 200, 252, 1) 100%);
+    z-index: 99;
+}
+
+#header .inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .custom-logo {
+    width: 100%;
+    max-width: 175px;
+    height: auto;
+}

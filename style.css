@@ -5,7 +5,7 @@ Author: Thomas Pericoi
 Author URI: https://thomaspericoi.com/
 Description: A Wordpress boilerplate theme for me and my projects. To be improved over the years.
 Requires at least: 5.9
-Tested up to: 6.0.3
+Tested up to: 6.1.1
 Text Domain: rhever
 */
 
@@ -29,6 +29,7 @@ Text Domain: rhever
 --------------------------------------------------------------- */
 
 @import "./assets/css/elements/containers.css";
+@import "./assets/css/elements/header.css";
 
 /* #Blocks
 --------------------------------------------------------------- */

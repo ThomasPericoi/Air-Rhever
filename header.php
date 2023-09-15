@@ -11,9 +11,14 @@
     <?php wp_body_open(); ?>
 
     <!-- Header -->
-    <header class="header">
+    <header id="header" class="header">
         <div class="container">
             <div class="inner-header">
+                <?php
+                if (function_exists('the_custom_logo')) {
+                    the_custom_logo();
+                }
+                ?>
             </div>
         </div>
     </header>
