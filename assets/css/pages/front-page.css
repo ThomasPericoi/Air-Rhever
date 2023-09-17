@@ -1,0 +1,17 @@
+/* #Front page
+--------------------------------------------------------------- */
+.home .hero {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home h1 {
+    margin-bottom: var(--spacing-section-inner);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.home .btn-wrapper {
+    margin-top: var(--spacing-section-inner);
+}

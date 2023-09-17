@@ -3,7 +3,7 @@ Theme Name: Air RHEVER
 Theme URI: https://thomaspericoi.com/
 Author: Thomas Pericoi
 Author URI: https://thomaspericoi.com/
-Description: A Wordpress boilerplate theme for me and my projects. To be improved over the years.
+Description: An extensive and customisable Wordpress theme built for RHEVER.
 Requires at least: 5.9
 Tested up to: 6.1.1
 Text Domain: rhever
@@ -23,13 +23,16 @@ Text Domain: rhever
 --------------------------------------------------------------- */
 
 @import "./assets/css/base/base.css";
+@import "./assets/css/base/content.css";
 @import "./assets/css/base/typography.css";
 
 /* #Elements
 --------------------------------------------------------------- */
 
+@import "./assets/css/elements/buttons.css";
 @import "./assets/css/elements/containers.css";
 @import "./assets/css/elements/header.css";
+@import "./assets/css/elements/footer.css";
 
 /* #Blocks
 --------------------------------------------------------------- */
@@ -40,5 +43,11 @@ Text Domain: rhever
 /* #Templates
 --------------------------------------------------------------- */
 
+@import "./assets/css/templates/simple-page.css";
+
 /* #Pages
 --------------------------------------------------------------- */
+
+@import "./assets/css/pages/front-page.css";
+@import "./assets/css/pages/single.css";
+@import "./assets/css/pages/single-edito.css";

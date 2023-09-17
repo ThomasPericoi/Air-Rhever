@@ -4,9 +4,9 @@
 <footer>
     <div class="container">
         <!-- OpenDyslexic Toggle -->
-        <div>
+        <div class="dyslexic-toggle">
             <input type="checkbox" id="open-dyslexic" name="open-dyslexic" />
-            <label for="open-dyslexic">Switch to OpenDyslexic</label>
+            <label for="open-dyslexic"><?php echo __("Activer OpenDyslexic", "rhever"); ?></label>
         </div>
     </div>
 </footer>

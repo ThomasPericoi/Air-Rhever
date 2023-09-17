@@ -19,7 +19,7 @@ $(document).ready(function () {
 
   // General - Insert quote in the console
   console.log(
-    "This theme was made by Thomas Pericoi - https://thomaspericoi.com/"
+    "Ce site a été fait par Thomas Pericoi - https://thomaspericoi.com/"
   );
 
   // General - Enable ASCII Printer on random
@@ -32,13 +32,13 @@ $(document).ready(function () {
         "--body": "OpenDyslexic, sans-serif",
         "--bold": "OpenDyslexic, sans-serif",
       });
-      console.log("OpenDyslexic on");
+      console.log("OpenDyslexic est activé");
     } else {
       $("html").css({
-        "--body": "Lato, sans-serif",
-        "--bold": "Lato, sans-serif",
+        "--body": "Ubuntu, sans-serif",
+        "--bold": "Ubuntu, sans-serif",
       });
-      console.log("OpenDyslexic off");
+      console.log("OpenDyslexic est désactivé");
     }
   });
 });

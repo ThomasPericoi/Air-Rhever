@@ -1,0 +1,13 @@
+/* #Single édito
+--------------------------------------------------------------- */
+.single-edito h1 {
+    margin-bottom: var(--spacing-title) !important;
+    text-align: center;
+    font-weight: 400;
+}
+
+.single-edito .signature {
+    text-align: center;
+    font-size: 1.25em;
+    font-family: 'Bad Script', cursive;
+}

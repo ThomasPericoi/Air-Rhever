@@ -24,31 +24,13 @@ if (function_exists('acf_add_options_page')) {
 // Register post types
 function register_custom_post_types()
 {
-    $post_types = ["sample"];
+    $post_types = ["edito"];
 
     foreach ($post_types as $post_type) {
         include_once(__DIR__ . '/post-types/' . $post_type . '.php');
     }
 }
 add_action('init', 'register_custom_post_types');
-
-// Add custom landing page taxonomy
-function register_custom_taxonomy()
-{
-    register_taxonomy(
-        'sample',
-        array('post', 'page'),
-        array(
-            'label' => 'Sample Taxonomies',
-            'public' => false,
-            'show_ui' => true,
-            'show_in_menu' => true,
-            'show_admin_column' => true,
-            'hierarchical' => true,
-        )
-    );
-}
-add_action('init', 'register_custom_taxonomy');
 
 /* BLOCK(S)
 --------------------------------------------------------------- */
@@ -71,8 +53,8 @@ function register_block_category($categories, $post)
         $categories,
         array(
             array(
-                'slug' => 'sample-category',
-                'title' => 'Sample',
+                'slug' => 'rhever',
+                'title' => 'RHEVER',
             ),
         )
     );

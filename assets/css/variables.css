@@ -1,11 +1,22 @@
+/* #Variables
+--------------------------------------------------------------- */
 :root {
   /* Colors */
   --black: #090909;
   --white: #fffffb;
 
+  --cape-honey: #ffe3a6;
+  --lavender-blue: #c3c8fc;
+
+  --primary: var(--cape-honey);
+  --secondary: var(--lavender-blue);
+
   /* Fonts */
-  --bold: 'Lato', sans-serif;
-  --body: 'Lato', sans-serif;
+  --bold: 'Ubuntu', sans-serif;
+  --body: 'Ubuntu', sans-serif;
 
   /* Spacings */
+  --spacing-section-inner: 4rem;
+  --spacing-section-outer: 7rem;
+  --spacing-title: 1em;
 }
