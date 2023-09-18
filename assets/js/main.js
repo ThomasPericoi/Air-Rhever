@@ -26,19 +26,37 @@ $(document).ready(function () {
   printRandomAscii();
 
   // General - Enable OpenDyslexic toggle
+  function enableDyslexicMode() {
+    $("html").css({
+      "--body": "OpenDyslexic, sans-serif",
+      "--bold": "OpenDyslexic, sans-serif",
+    });
+    sessionStorage.setItem("dyslexicMode", true);
+    console.log("OpenDyslexic est activé");
+  }
+
+  function disableDyslexicMode() {
+    $("html").css({
+      "--body": "Ubuntu, sans-serif",
+      "--bold": "Ubuntu, sans-serif",
+    });
+    sessionStorage.setItem("dyslexicMode", false);
+    console.log("OpenDyslexic est désactivé");
+  }
+
+  if (sessionStorage.getItem("dyslexicMode") == "true") {
+    enableDyslexicMode();
+    document.getElementById("open-dyslexic").checked = true;
+  } else {
+    disableDyslexicMode();
+    document.getElementById("open-dyslexic").checked = false;
+  };
+
   document.getElementById("open-dyslexic").addEventListener('change', function () {
     if (this.checked) {
-      $("html").css({
-        "--body": "OpenDyslexic, sans-serif",
-        "--bold": "OpenDyslexic, sans-serif",
-      });
-      console.log("OpenDyslexic est activé");
+      enableDyslexicMode();
     } else {
-      $("html").css({
-        "--body": "Ubuntu, sans-serif",
-        "--bold": "Ubuntu, sans-serif",
-      });
-      console.log("OpenDyslexic est désactivé");
+      disableDyslexicMode();
     }
   });
 });
