@@ -1,0 +1,43 @@
+{
+    "key": "group_6509bdce8a862",
+    "title": "TYPE - Événements",
+    "fields": [
+        {
+            "key": "field_6509bdce7555e",
+            "label": "Date de l'événement",
+            "name": "event_date",
+            "aria-label": "",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d\/m\/Y",
+            "return_format": "j F Y",
+            "first_day": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1695139725
+}

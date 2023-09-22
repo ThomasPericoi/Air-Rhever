@@ -12,6 +12,19 @@ html {
   background: var(--primary);
 }
 
+.sr-only {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
 main {
-  padding: var(--spacing-section-outer) 0;
+  margin: var(--spacing-section-outer) 0;
+  animation: fadeIn ease 800ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }

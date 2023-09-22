@@ -2,10 +2,9 @@
 --------------------------------------------------------------- */
 #header {
     width: 100%;
-    padding: 2rem 0;
     position: relative;
     background-color: var(--primary);
-    background: linear-gradient(90deg, var(--primary) 15%, var(--secondary) 100%);
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
     z-index: 99;
 }
 
@@ -13,10 +12,38 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 3em;
 }
 
 #header .custom-logo {
     width: 100%;
     max-width: 115px;
     height: auto;
+}
+
+/* Menu */
+#header .menu-header {
+    display: none;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+    background-color: unset;
+}
+
+@media screen and (min-width: 992px) {
+    #header .menu-header {
+        display: flex;
+    }
+}
+
+#header .menu-header li a {
+    width: unset;
+    padding: 3rem 1em;
+    display: block;
+    color: var(--black);
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color ease 250ms;
 }

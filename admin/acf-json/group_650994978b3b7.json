@@ -1,0 +1,97 @@
+{
+    "key": "group_650994978b3b7",
+    "title": "OPTIONS DU THÈME",
+    "fields": [
+        {
+            "key": "field_650994c22e89d",
+            "label": "En-tête",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_650995d4eb58b",
+            "label": "Menu",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Pour modifier la disposition du menu, il faut se rendre dans Apparence > Menus.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_650994982e89c",
+            "label": "Pied de page",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_650995162e89f",
+            "label": "Texte d'informations",
+            "name": "footer_description",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Le texte s'affichera dans la première colonne, sous le logo.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1695127241
+}

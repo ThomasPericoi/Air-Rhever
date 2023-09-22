@@ -56,7 +56,8 @@ function register_menus()
 {
     register_nav_menus(
         array(
-            'header-menu' => 'Header Menu',
+            'header-menu' => __('Menu de l\'en-tête', 'rhever'),
+            'sub-footer-menu' =>  __('Sous-menu du pied de page', 'rhever'),
         )
     );
 }

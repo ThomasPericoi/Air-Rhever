@@ -2,14 +2,16 @@
 --------------------------------------------------------------- */
 :root {
   /* Colors */
-  --black: #090909;
-  --white: #fffffb;
+  --black: #282828;
+  --white: #fefefe;
 
+  --alto: #d9d9d9;
   --cape-honey: #ffe3a6;
-  --lavender-blue: #c3c8fc;
+  --hawkes-blue: #dde0fc;
 
   --primary: var(--cape-honey);
-  --secondary: var(--lavender-blue);
+  --secondary: var(--hawkes-blue);
+  --border-color: var(--alto);
 
   /* Fonts */
   --bold: 'Ubuntu', sans-serif;
@@ -17,6 +19,10 @@
 
   /* Spacings */
   --spacing-section-inner: 4rem;
-  --spacing-section-outer: 7rem;
-  --spacing-title: 1em;
+  --spacing-section-outer: 6rem;
+  --spacing-title: 1.5em;
+
+  @media screen and (min-width: 1200px) {
+    --spacing-section-outer: 8rem;
+  }
 }

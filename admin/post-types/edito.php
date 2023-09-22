@@ -1,17 +1,17 @@
 <?php
 $labels = [
-    'name' => 'Éditos',
-    'singular_name' => 'Édito',
-    'add_new' => 'Ajouter',
-    'add_new_item' => 'Ajouter un édito',
-    'edit_item' => 'Modifier l\'édito',
-    'new_item' => 'Nouvel édito',
-    'view_item' => 'Voir l\'édito',
-    'search_items' => 'Chercher un édito',
-    'not_found' =>  'Aucun édito de trouvé.',
-    'all_items' => 'Tous les éditos',
-    'not_found_in_trash' => 'Aucun édito dans la corbeille.',
-    'parent_item_colon' => ''
+    'name' => __('Éditos', 'rhever'),
+    'singular_name' => __('Édito', 'rhever'),
+    'add_new' => __('Ajouter', 'rhever'),
+    'add_new_item' => __('Ajouter un édito', 'rhever'),
+    'edit_item' => __('Modifier l\'édito', 'rhever'),
+    'new_item' => __('Nouvel édito', 'rhever'),
+    'view_item' => __('Voir l\'édito', 'rhever'),
+    'search_items' => __('Chercher un édito', 'rhever'),
+    'not_found' =>  __('Aucun édito de trouvé.', 'rhever'),
+    'all_items' => __('Tous les éditos', 'rhever'),
+    'not_found_in_trash' => __('Aucun édito dans la corbeille.', 'rhever'),
+    'parent_item_colon' => __('', 'rhever'),
 ];
 
 $args = [
@@ -27,10 +27,8 @@ $args = [
     'supports' => [
         'title',
         'editor',
-        'thumbnail',
         'excerpt',
         'custom-fields',
-        'page-attributes'
     ],
     'taxonomies' => [],
     'has_archive' => false,

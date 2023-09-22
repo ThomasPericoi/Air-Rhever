@@ -19,6 +19,7 @@
                     the_custom_logo();
                 }
                 ?>
+                <?php wp_nav_menu(array('theme_location' => 'header-menu', 'menu_class' => 'menu menu-header', 'container' => false)); ?>
             </div>
         </div>
     </header>

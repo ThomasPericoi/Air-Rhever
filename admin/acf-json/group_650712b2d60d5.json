@@ -1,6 +1,6 @@
 {
     "key": "group_650712b2d60d5",
-    "title": "OPTIONS – Page d’accueil",
+    "title": "PAGES – Page d’accueil",
     "fields": [
         {
             "key": "field_650712b37cff8",
@@ -22,7 +22,7 @@
         {
             "key": "field_650713037cff9",
             "label": "Titre principal",
-            "name": "front_title",
+            "name": "home_title",
             "aria-label": "",
             "type": "text",
             "instructions": "Supplante le titre du site. Laissez vide pour afficher le titre original.",
@@ -42,7 +42,7 @@
         {
             "key": "field_6507132e7cffa",
             "label": "Description principal",
-            "name": "front_description",
+            "name": "home_description",
             "aria-label": "",
             "type": "wysiwyg",
             "instructions": "Supplante la description du site. Laissez vide pour afficher la description originale.",
@@ -58,6 +58,125 @@
             "toolbar": "basic",
             "media_upload": 0,
             "delay": 1
+        },
+        {
+            "key": "field_6509ade360845",
+            "label": "Calendrier",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6509ae0160846",
+            "label": "Titre de la section",
+            "name": "home_calendar_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_650aa27c63431",
+            "label": "À propos",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_650d5ccd37a2b",
+            "label": "Titre de la section",
+            "name": "home_about_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_650d5cf137a2c",
+            "label": "Texte",
+            "name": "home_about_text",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_650aa29063432",
+            "label": "Image de présentation",
+            "name": "home_about_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -78,5 +197,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1694962688
+    "modified": 1695374678
 }
