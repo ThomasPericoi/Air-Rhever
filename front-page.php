@@ -8,17 +8,15 @@ $description = get_field('home_description') ?: get_bloginfo("description");
     <div class="container">
         <h1><?php echo $title; ?></h1>
         <div class="description"><?php echo $description; ?></div>
-
         <?php global $post;
         $posts = get_posts(array(
             'numberposts' => 1,
             'post_type'   => 'edito'
         ));
-
         if ($posts) : ?>
             <div class="btn-wrapper">
                 <?php foreach ($posts as $post) : setup_postdata($post); ?>
-                    <a href="<?php the_permalink(); ?>" class="btn btn-primary"><?php echo __("Consulter le dernier éditorial", "rhever"); ?></a>
+                    <a href="<?php the_permalink(); ?>" class="btn btn-primary btn-icon-corner-down-right"><?php echo __("Consulter le dernier éditorial", "rhever"); ?></a>
                 <?php endforeach; ?>
             </div>
     </div>
@@ -41,7 +39,7 @@ $image = get_field('home_about_image');
             <?php if ($text) : ?>
                 <?php echo $text; ?>
             <?php endif; ?>
-            <a href="#" class="btn"><?php echo __("L'association en détail", "rhever"); ?></a>
+            <a href="#" class="btn btn-icon-search"><?php echo __("L'association en détail", "rhever"); ?></a>
         </div>
         <figure>
             <?php if (!empty($image)) : ?>
@@ -92,6 +90,9 @@ $posts = get_posts(array(
             </div>
         <?php else : echo __('Il n\'y a aucun événement de planifié pour le moment.', 'rhever');
         endif; ?>
+        <div class="btn-wrapper">
+            <a href="<?php echo get_post_type_archive_link('event'); ?>" class="btn btn-simple btn-icon-arrow-right"><?php echo __("Voir tous les événements de RHEVER", "rhever"); ?></a>
+        </div>
 </section>
 <?php wp_reset_postdata();  ?>
 

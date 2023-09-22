@@ -19,10 +19,9 @@
 
   /* Spacings */
   --spacing-section-inner: 4rem;
-  --spacing-section-outer: 6rem;
+  --spacing-section-outer: 8rem;
   --spacing-title: 1.5em;
 
-  @media screen and (min-width: 1200px) {
-    --spacing-section-outer: 8rem;
-  }
+  /* Radius */
+  --border-radius: 3px;
 }

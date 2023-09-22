@@ -46,7 +46,7 @@
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
-    transition: color ease 250ms;
+    transition: color ease 350ms;
 }
 
 #header .menu-header li a:before {
@@ -61,7 +61,7 @@
     z-index: -1;
     transform-origin: left;
     transform: scaleX(0);
-    transition: transform ease 500ms;
+    transition: transform ease 350ms;
 }
 
 #header .menu-header li a:hover:before,

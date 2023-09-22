@@ -24,7 +24,7 @@ html {
 
 main {
   margin: var(--spacing-section-outer) 0;
-  animation: fadeIn ease 800ms;
+  animation: fadeIn ease 850ms;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }

@@ -30,7 +30,7 @@
     flex-direction: column;
     color: var(--black);
     text-decoration: none;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
 }
 
@@ -39,12 +39,13 @@
     flex-grow: 1;
     clip-path: inset(6px 6px 0px 6px);
     background-color: var(--white);
+    border-radius: var(--border-radius);
     transition: clip-path ease 350ms;
 }
 
 .rainbow-grid .grid-element:hover .content,
 .rainbow-grid .grid-element:focus .content {
-    clip-path: inset(10px 10px 4px 10px);
+    clip-path: inset(12px 12px 6px 12px);
 }
 
 .rainbow-grid .grid-element h3 {
@@ -61,22 +62,45 @@
 }
 
 .rainbow-grid .grid-element .date {
-    margin-left: 2rem;
-    padding: 1em 0;
+    padding: 1rem 2rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-family: var(--bold);
     font-weight: 500;
+}
+
+.rainbow-grid .grid-element .date:before {
+    content: "";
+    display: block;
+    height: 18px;
+    width: 18px;
+    background-size: 18px 18px;
+    background-image: url(../../icons/calendar.svg);
+    transform: translateX(0);
+    transition: transform ease 350ms;
 }
 
 .rainbow-grid .grid-element[data-timeline="past"] .date span {
     text-decoration: line-through;
 }
 
+.rainbow-grid .grid-element[data-timeline="past"] .date:after,
+.rainbow-grid .grid-element[data-timeline="future"]:nth-child(1) .date:after {
+    padding: 2px 6px;
+    color: var(--white);
+    font-size: 0.75em;
+    border-radius: var(--border-radius);
+    background-color: var(--black);
+}
+
 .rainbow-grid .grid-element[data-timeline="past"] .date:after {
     content: "Déroulé";
-    margin-left: 10px;
-    padding: 3px 5px;
-    color: var(--white);
-    font-size: 0.8em;
-    background-color: var(--black);
+}
+
+.rainbow-grid .grid-element[data-timeline="future"]:nth-child(1) .date:after {
+    content: "Prochain";
+    color: var(--black);
+    background-color: var(--white);
 }

@@ -29,6 +29,10 @@ p {
   }
 }
 
+a:not(:hover) {
+  color: var(--black);
+}
+
 h1,
 h2,
 h3,
@@ -194,7 +198,7 @@ h6,
   z-index: -1;
   transform-origin: left;
   transform: scaleX(0);
-  transition: transform ease 500ms 350ms;
+  transition: transform ease 350ms 350ms;
 }
 
 .js-viewed .highlighted:before {

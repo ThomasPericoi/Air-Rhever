@@ -94,11 +94,11 @@
     background-color: transparent;
     border: 2px solid var(--black);
     border-radius: 50%;
-    transition: background-color ease 250ms;
+    transition: background-color ease 350ms;
 }
 
 .dyslexic-toggle input:checked+label:before {
-    background-color: black;
+    background-color: var(--black);
 }
 
 .dyslexic-toggle input:focus+label {

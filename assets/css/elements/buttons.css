@@ -28,7 +28,7 @@
     background-image: linear-gradient(90deg, var(--white) 50%, var(--primary) 100%);
     background-position: 0%;
     background-size: 200% 100%;
-    border-radius: 2px;
+    border-radius: var(--border-radius);
     transition: background-position ease 350ms;
 }
 
@@ -37,8 +37,64 @@
     background-position: 100%;
 }
 
+/* Simple */
+.btn.btn-simple {
+    height: auto;
+    padding: 0;
+    background: none;
+}
+
+.btn.btn-simple[class*="btn-icon"]:after {
+    height: 24px;
+    width: 24px;
+    background-size: 24px 24px;
+}
+
+.btn.btn-simple[class*="btn-icon"]:hover:after,
+.btn.btn-simple[class*="btn-icon"]:focus:after {
+    transform: translateX(5px);
+}
+
 /* Primary */
 .btn.btn-primary {
     background-image: linear-gradient(90deg, var(--primary) 50%, var(--secondary) 100%);
     color: var(--black);
+}
+
+/* Icon */
+.btn[class*="btn-icon"] {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn[class*="btn-icon"]:after {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-size: 20px 20px;
+    transform: translateX(0);
+    transition: transform ease 350ms;
+}
+
+.btn-icon-arrow-right:after {
+    background-image: url(../../icons/arrow-right.svg);
+}
+
+.btn-icon-calendar:after {
+    background-image: url(../../icons/calendar.svg);
+}
+
+.btn-icon-corner-down-right:after {
+    background-image: url(../../icons/corner-down-right.svg);
+}
+
+.btn-icon-external-link:after {
+    background-image: url(../../icons/external-link.svg);
+}
+
+.btn-icon-search:after {
+    background-image: url(../../icons/search.svg);
 }

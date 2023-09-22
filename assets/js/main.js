@@ -77,6 +77,9 @@ document.addEventListener("DOMContentLoaded", function () {
       markAsViewed(item, item);
     });
   });
+  document.querySelectorAll(".js-toBeTriggered").forEach(function (item, index) {
+    toggleClassOnScroll(item, item);
+  });
   document.querySelectorAll("section").forEach(function (item, index) {
     markAsViewed(item, item);
   });
