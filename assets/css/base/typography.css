@@ -50,7 +50,7 @@ h6 {
 
 h1,
 .h1-size {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -192,6 +192,13 @@ h6,
   position: absolute;
   background-color: var(--white);
   z-index: -1;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform ease 500ms 350ms;
+}
+
+.js-viewed .highlighted:before {
+  transform: scaleX(1);
 }
 
 .highlighted-primary:before {

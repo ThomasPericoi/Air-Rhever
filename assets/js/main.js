@@ -45,12 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // General - Elements is in view
-  function addClassOnScroll(trigger, target) {
+  function toggleClassOnScroll(trigger, target) {
     if (trigger && target) {
       var elementTop = trigger.offsetTop;
       var elementBottom = trigger.offsetHeight + elementTop;
       var topScreen = window.scrollY;
-      var bottomScreen = window.scrollY + window.innerHeight * 0.5;
+      var bottomScreen = window.scrollY + window.innerHeight * 0.55;
       if (bottomScreen > elementTop && topScreen < elementBottom) {
         target.classList.add("js-inView");
       } else {
@@ -58,9 +58,26 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
+  function markAsViewed(trigger, target) {
+    if (trigger && target) {
+      var elementTop = trigger.offsetTop;
+      var elementBottom = trigger.offsetHeight + elementTop;
+      var topScreen = window.scrollY;
+      var bottomScreen = window.scrollY + window.innerHeight * 0.55;
+      if (bottomScreen > elementTop && topScreen < elementBottom) {
+        target.classList.add("js-viewed");
+      }
+    }
+  }
   window.addEventListener("scroll", () => {
     document.querySelectorAll(".js-toBeTriggered").forEach(function (item, index) {
-      addClassOnScroll(item, item);
+      toggleClassOnScroll(item, item);
     });
+    document.querySelectorAll("section").forEach(function (item, index) {
+      markAsViewed(item, item);
+    });
+  });
+  document.querySelectorAll("section").forEach(function (item, index) {
+    markAsViewed(item, item);
   });
 }); 
