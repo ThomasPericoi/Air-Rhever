@@ -1,0 +1,124 @@
+/* #CTA Large
+--------------------------------------------------------------- */
+.cta-large {
+    position: relative;
+    margin: var(--spacing-section-outer) auto;
+}
+
+.cta-large:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: calc(var(--spacing-section-outer) / -2);
+    bottom: calc(var(--spacing-section-outer) / -2);
+    z-index: 1;
+    background: var(--primary);
+}
+
+.cta-large.cta-secondary:before {
+    background: var(--secondary);
+}
+
+@media screen and (min-width: 1200px) {
+    .cta-large:before {
+        width: 50%;
+        top: 0;
+        bottom: 0;
+    }
+
+    .cta-large.cta-reverse:before {
+        width: 50%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.cta-large .container {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+@media screen and (min-width: 1200px) {
+    .cta-large .container {
+        flex-direction: row;
+    }
+
+    .cta-large.cta-reverse .container {
+        flex-direction: row-reverse;
+    }
+}
+
+.cta-large .content {
+    padding-bottom: var(--spacing-section-inner);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--spacing-section-inner);
+    box-sizing: border-box;
+}
+
+@media screen and (min-width: 1200px) {
+    .cta-large .content {
+        width: 50%;
+        padding: var(--spacing-section-inner) var(--spacing-section-inner) var(--spacing-section-inner) 0;
+    }
+
+    .cta-large.cta-reverse .content {
+        padding: var(--spacing-section-inner) 0 var(--spacing-section-inner) var(--spacing-section-inner);
+    }
+}
+
+.cta-large figure {
+    width: 100%;
+    background-color: var(--secondary);
+    border-radius: var(--border-radius);
+}
+
+.cta-large.cta-secondary figure {
+    background-color: var(--primary);
+}
+
+@media screen and (min-width: 1200px) {
+    .cta-large figure {
+        width: 50%;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
+
+    .cta-large.cta-reverse figure {
+        border-radius: var(--border-radius) 0 0 var(--border-radius);
+    }
+}
+
+.cta-large figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transform: rotate(0deg);
+    transition: transform ease 350ms;
+}
+
+.cta-large.js-inView figure img {
+    transform: rotate(2deg);
+}
+
+.cta-large.cta-reverse.js-inView figure img {
+    transform: rotate(-2deg);
+}
+
+@media screen and (min-width: 1200px) {
+    .cta-large figure img {
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        transform-origin: bottom left;
+    }
+
+    .cta-large.cta-reverse figure img {
+        border-radius: var(--border-radius) 0 0 var(--border-radius);
+        transform-origin: bottom right;
+    }
+}

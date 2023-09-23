@@ -30,7 +30,7 @@ $title = get_field('home_about_title');
 $text = get_field('home_about_text');
 $image = get_field('home_about_image');
 ?>
-<section id="home-about" class="js-toBeTriggered">
+<section id="home-about" class="cta-large cta-secondary js-toBeTriggered">
     <div class="container container-lg">
         <div class="content">
             <?php if ($title) : ?>

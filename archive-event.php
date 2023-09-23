@@ -37,4 +37,29 @@
     </div>
 </section>
 
+<!-- CTA -->
+<?php
+$title = get_field('events_cta_title', 'option');
+$text = get_field('events_cta_text', 'option');
+$image = get_field('events_cta_image', 'option');
+?>
+<section id="events-cta" class="cta-large cta-reverse cta-secondary js-toBeTriggered">
+    <div class="container container-lg">
+        <div class="content">
+            <?php if ($title) : ?>
+                <h2 class="highlighted"><?php echo $title; ?></h2>
+            <?php endif; ?>
+            <?php if ($text) : ?>
+                <?php echo $text; ?>
+            <?php endif; ?>
+            <a href="#" class="btn btn-icon-corner-down-right"><?php echo __("Consulter les comptes-rendus", "rhever"); ?></a>
+        </div>
+        <figure>
+            <?php if (!empty($image)) : ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            <?php endif; ?>
+        </figure>
+    </div>
+</section>
+
 <?php get_footer(); ?>

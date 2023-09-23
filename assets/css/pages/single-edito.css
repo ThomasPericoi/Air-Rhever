@@ -3,7 +3,6 @@
 .single-edito h1 {
     margin-bottom: var(--spacing-title) !important;
     text-align: center;
-    font-weight: 400;
 }
 
 .single-edito .signature {

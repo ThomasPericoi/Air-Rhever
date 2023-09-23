@@ -38,6 +38,7 @@ Text Domain: rhever
 
 /* #Blocks
 --------------------------------------------------------------- */
+@import "./assets/css/blocks/cta-large.css";
 
 /* #Template Parts
 --------------------------------------------------------------- */
@@ -54,3 +55,4 @@ Text Domain: rhever
 @import "./assets/css/pages/front-page.css";
 @import "./assets/css/pages/single.css";
 @import "./assets/css/pages/single-edito.css";
+@import "./assets/css/pages/single-event.css";
