@@ -17,19 +17,23 @@
 .btn {
     height: 40px;
     padding: 0.35rem 1.4rem;
+    box-sizing: content-box;
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    font-size: 1em;
     font-family: var(--bold);
     font-weight: 500;
     color: var(--black);
     background-image: linear-gradient(90deg, var(--white) 50%, var(--primary) 100%);
     background-position: 0%;
     background-size: 200% 100%;
+    border: 0;
     border-radius: var(--border-radius);
     transition: background-position ease 350ms;
+    cursor: pointer;
 }
 
 .btn.btn:hover,
@@ -63,7 +67,6 @@
 
 /* Icon */
 .btn[class*="btn-icon"] {
-    position: relative;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -71,9 +74,9 @@
 
 .btn[class*="btn-icon"]:after {
     content: "";
-    display: block;
-    height: 20px;
     width: 20px;
+    height: 20px;
+    display: block;
     background-size: 20px 20px;
     transform: translateX(0);
     transition: transform ease 350ms;
@@ -93,6 +96,14 @@
 
 .btn-icon-external-link:after {
     background-image: url(../../icons/external-link.svg);
+}
+
+.btn-icon-mail:after {
+    background-image: url(../../icons/mail.svg);
+}
+
+.btn-icon-plus-circle:after {
+    background-image: url(../../icons/plus-circle.svg);
 }
 
 .btn-icon-search:after {

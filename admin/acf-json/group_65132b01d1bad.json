@@ -1,0 +1,404 @@
+{
+    "key": "group_65132b01d1bad",
+    "title": "PAGES - Adhérents",
+    "fields": [
+        {
+            "key": "field_65132b02bd2bb",
+            "label": "Trombinoscope",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_65132b1cbd2bc",
+            "label": "Membres de l'association",
+            "name": "association_members",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Ajouter un élément",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_65132b80bacc5",
+                    "label": "Nom",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_65132bacbacc6",
+                    "label": "Prénom",
+                    "name": "first_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_65132bbbbacc7",
+                    "label": "Portrait",
+                    "name": "portrait",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_651534f7dfbbe",
+                    "label": "Statut",
+                    "name": "status",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "liberal": "Libéral",
+                        "hospital": "Hospitalier",
+                        "mixed": "Mixte"
+                    },
+                    "default_value": "mixed",
+                    "return_format": "label",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "layout": "vertical",
+                    "save_other_choice": 0,
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_65132bf0bacc8",
+                    "label": "Adresses",
+                    "name": "addresses",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Ajouter un élément",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_65132c12bacc9",
+                            "label": "Adresse",
+                            "name": "address",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_65132bf0bacc8"
+                        }
+                    ],
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_65132c29bacca",
+                    "label": "Téléphone (secrétariat)",
+                    "name": "phone_secretary",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_65132c5fbaccb",
+                    "label": "Téléphone (personnel)",
+                    "name": "phone_personal",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_65152e107db8e",
+                    "label": "Mail (secrétariat)",
+                    "name": "email_secretary",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Ajouter un élément",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_65152e2c7db8f",
+                            "label": "Adresse mail",
+                            "name": "mail",
+                            "aria-label": "",
+                            "type": "email",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_65152e107db8e"
+                        }
+                    ],
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_65132c9abaccd",
+                    "label": "Mail (personnel)",
+                    "name": "email_personal",
+                    "aria-label": "",
+                    "type": "email",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_65132cdebaccf",
+                    "label": "Domaine(s) d'expertise",
+                    "name": "expertises",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Densitométrie": "Densitométrie",
+                        "Échographie articulaire": "Échographie articulaire",
+                        "Fragilité Osseuse": "Fragilité Osseuse",
+                        "Hémophilie": "Hémophilie",
+                        "Infiltrations échoguidées": "Infiltrations échoguidées",
+                        "Maladie de Dupuytren": "Maladie de Dupuytren",
+                        "Maladies osseuses": "Maladies osseuses",
+                        "Mécanique (PRP ou Viscosupplémentation échoguidés)": "Mécanique (PRP ou Viscosupplémentation échoguidés)",
+                        "Médecine du sport": "Médecine du sport",
+                        "Ostéoporose": "Ostéoporose",
+                        "Pathologie articulaire mécanique": "Pathologie articulaire mécanique",
+                        "Rhumatisme inflammatoire": "Rhumatisme inflammatoire",
+                        "Rhumatologie générale hospitalière": "Rhumatologie générale hospitalière",
+                        "RIC": "RIC",
+                        "Synovite villonodulaire": "Synovite villonodulaire",
+                        "Autre": "Autre"
+                    },
+                    "default_value": [],
+                    "return_format": "value",
+                    "multiple": 1,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_65152431de84c",
+                    "label": "Domaine(s) d'expertise (Autre)",
+                    "name": "expertises_other",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_65132cdebaccf",
+                                "operator": "==",
+                                "value": "Autre"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_65132b1cbd2bc"
+                },
+                {
+                    "key": "field_65132cc5bacce",
+                    "label": "Commentaire",
+                    "name": "comment",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "parent_repeater": "field_65132b1cbd2bc"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/page-directory.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1695889104
+}

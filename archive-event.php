@@ -1,9 +1,13 @@
 <?php get_header(); ?>
 
 <!-- Hero -->
+<?php $introduction = get_field("events_introduction", "option"); ?>
 <section id="events-hero" class="hero">
     <div class="container container-sm">
-        <h1 class="title"><?php echo __('Calendrier des événements RHEVER'); ?></h1>
+        <h1><?php echo __('Les réunions RHEVER'); ?></h1>
+        <?php if ($introduction) : ?>
+            <?php echo $introduction; ?>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -15,11 +19,11 @@
                 <?php
                 while (have_posts()) : the_post(); ?>
                     <?php $timeline = (get_field('event_date', false, false) < date('Ymd')) ? "past" : "future"; ?>
-                    <a href="<?php the_permalink(); ?>" class="grid-element event" data-timeline="<?php echo $timeline; ?>">
+                    <a href="<?php esc_url(the_permalink()); ?>" class="grid-element event" data-timeline="<?php echo $timeline; ?>">
                         <div class="content">
                             <h3><?php echo get_the_title(); ?></h3>
                             <?php
-                            $categories = get_the_terms(get_the_ID(), 'event_category');
+                            $categories = get_the_terms(get_the_ID(), 'event_type');
                             $category_name = $categories[0]->name;
                             ?>
                             <?php if ($categories) : ?>
@@ -52,7 +56,6 @@ $image = get_field('events_cta_image', 'option');
             <?php if ($text) : ?>
                 <?php echo $text; ?>
             <?php endif; ?>
-            <a href="#" class="btn btn-icon-corner-down-right"><?php echo __("Consulter les comptes-rendus", "rhever"); ?></a>
         </div>
         <figure>
             <?php if (!empty($image)) : ?>

@@ -1,0 +1,49 @@
+/* #Forms
+--------------------------------------------------------------- */
+main input[type="text"],
+main input[type="email"],
+main textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: var(--body);
+    outline: 0;
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--black);
+    transition: border-color ease 350ms;
+}
+
+main input[type="text"]:focus,
+main input[type="email"]:focus,
+main textarea:focus {
+    border-style: dashed;
+}
+
+/* Contact Form 7 */
+.wpcf7-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-title);
+}
+
+.wpcf7-form label {
+    font-weight: 700;
+}
+
+.wpcf7-submit {
+    margin: 0 auto;
+    display: block;
+}
+
+.wpcf7-not-valid-tip {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.wpcf7-response-output {
+    font-size: 0.8rem;
+    font-weight: 500;
+}

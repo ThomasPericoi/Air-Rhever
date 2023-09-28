@@ -1,6 +1,5 @@
 /* #WordPress Core
 -------------------------------------------------------------- */
-
 .alignnone {
   margin: 5px 20px 20px 0;
 }
@@ -8,6 +7,7 @@
 .aligncenter,
 div.aligncenter {
   display: block;
+  justify-content: center;
   margin: 5px auto 5px auto;
 }
 

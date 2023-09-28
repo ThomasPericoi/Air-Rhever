@@ -32,6 +32,7 @@ Text Domain: rhever
 
 @import "./assets/css/elements/buttons.css";
 @import "./assets/css/elements/containers.css";
+@import "./assets/css/elements/forms.css";
 @import "./assets/css/elements/grids.css";
 @import "./assets/css/elements/header.css";
 @import "./assets/css/elements/footer.css";
@@ -46,13 +47,14 @@ Text Domain: rhever
 /* #Templates
 --------------------------------------------------------------- */
 
-@import "./assets/css/templates/simple-page.css";
+@import "./assets/css/templates/page-directory.css";
 
 /* #Pages
 --------------------------------------------------------------- */
 
 @import "./assets/css/pages/archive-event.css";
 @import "./assets/css/pages/front-page.css";
+@import "./assets/css/pages/page.css";
 @import "./assets/css/pages/single.css";
 @import "./assets/css/pages/single-edito.css";
 @import "./assets/css/pages/single-event.css";

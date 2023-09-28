@@ -1,6 +1,11 @@
 /* #Archive event
 --------------------------------------------------------------- */
 #events-hero {
+    max-width: 1000px;
     margin: var(--spacing-section-outer) auto;
     text-align: center;
+}
+
+#events-hero h1 {
+    margin-bottom: var(--spacing-title);
 }

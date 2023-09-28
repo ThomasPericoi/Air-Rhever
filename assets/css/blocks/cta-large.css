@@ -5,6 +5,12 @@
     margin: var(--spacing-section-outer) auto;
 }
 
+@media screen and (max-width: 1199px) {
+    .cta-block {
+        margin: var(--spacing-section-outer) auto !important;
+    }
+}
+
 .cta-large:before {
     content: "";
     display: block;

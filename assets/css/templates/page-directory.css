@@ -1,0 +1,35 @@
+/* #Page directory
+--------------------------------------------------------------- */
+/* Hero */
+#directory-hero {
+    max-width: 1000px;
+    margin: var(--spacing-section-inner) auto;
+    text-align: center;
+}
+
+#directory-hero h1 {
+    margin-bottom: var(--spacing-title);
+}
+
+#directory-hero .featured-image {
+    margin-top: var(--spacing-section-inner);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#directory-hero .featured-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+/* List */
+#directory-list {
+    padding: var(--spacing-section-inner) 0;
+    background-color: var(--secondary);
+}
+
+#directory-list h2 span {
+    text-transform: uppercase;
+}

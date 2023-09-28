@@ -6,22 +6,31 @@
   --white: #fefefe;
 
   --alto: #d9d9d9;
-  --cape-honey: #ffe3a6;
+  --cornflower-blue: #7aa7f5;
   --hawkes-blue: #dde0fc;
 
-  --primary: var(--cape-honey);
+  --primary: var(--cornflower-blue);
   --secondary: var(--hawkes-blue);
   --border-color: var(--alto);
 
   /* Fonts */
-  --bold: 'Ubuntu', sans-serif;
+  --bold: 'Dosis', serif;
   --body: 'Ubuntu', sans-serif;
 
   /* Spacings */
-  --spacing-section-inner: 4rem;
-  --spacing-section-outer: 8rem;
-  --spacing-title: 1.5em;
+  --spacing-section-inner: 3rem;
+  --spacing-section-outer: 6rem;
+  --spacing-title: 1em;
 
   /* Radius */
   --border-radius: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    /* Spacings */
+    --spacing-section-inner: 4rem;
+    --spacing-section-outer: 8rem;
+    --spacing-title: 1.25em;
+  }
 }

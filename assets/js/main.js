@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // General - Enable OpenDyslexic toggle
   function enableDyslexicMode() {
-    document.querySelector(':root').style.setProperty('--body', "OpenDyslexic, sans-serif");
     document.querySelector(':root').style.setProperty('--bold', "OpenDyslexic, sans-serif");
+    document.querySelector(':root').style.setProperty('--body', "OpenDyslexic, sans-serif");
     sessionStorage.setItem("dyslexicMode", true);
     console.log("OpenDyslexic est activé");
   }
   function disableDyslexicMode() {
+    document.querySelector(':root').style.setProperty('--bold', "Dosis, sans-serif");
     document.querySelector(':root').style.setProperty('--body', "Ubuntu, sans-serif");
-    document.querySelector(':root').style.setProperty('--bold', "Ubuntu, sans-serif");
     sessionStorage.setItem("dyslexicMode", false);
     console.log("OpenDyslexic est désactivé");
   }
@@ -47,11 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // General - Elements is in view
   function toggleClassOnScroll(trigger, target) {
     if (trigger && target) {
-      var elementTop = trigger.offsetTop;
-      var elementBottom = trigger.offsetHeight + elementTop;
-      var topScreen = window.scrollY;
-      var bottomScreen = window.scrollY + window.innerHeight * 0.55;
-      if (bottomScreen > elementTop && topScreen < elementBottom) {
+      var elementTop = trigger.getBoundingClientRect().top;
+      if (elementTop > window.innerHeight * 0.15 && elementTop < window.innerHeight * 0.85) {
         target.classList.add("js-inView");
       } else {
         target.classList.remove("js-inView");
@@ -60,12 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   function markAsViewed(trigger, target) {
     if (trigger && target) {
-      var elementTop = trigger.offsetTop;
-      var elementBottom = trigger.offsetHeight + elementTop;
-      var topScreen = window.scrollY;
-      var bottomScreen = window.scrollY + window.innerHeight * 0.55;
-      if (bottomScreen > elementTop && topScreen < elementBottom) {
-        target.classList.add("js-viewed");
+      if (trigger && target) {
+        var elementTop = trigger.getBoundingClientRect().top;
+        if (elementTop > window.innerHeight * 0.15 && elementTop < window.innerHeight * 0.85) {
+          target.classList.add("js-viewed");
+        }
       }
     }
   }
@@ -73,14 +69,59 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".js-toBeTriggered").forEach(function (item, index) {
       toggleClassOnScroll(item, item);
     });
-    document.querySelectorAll("section").forEach(function (item, index) {
+    document.querySelectorAll("main section").forEach(function (item, index) {
       markAsViewed(item, item);
     });
   });
   document.querySelectorAll(".js-toBeTriggered").forEach(function (item, index) {
     toggleClassOnScroll(item, item);
   });
-  document.querySelectorAll("section").forEach(function (item, index) {
+  document.querySelectorAll("main section").forEach(function (item, index) {
     markAsViewed(item, item);
+  });
+
+  // Header - Menu
+  document.querySelectorAll(".menu-header-desktop>li>a").forEach(function (item) {
+    item.tabIndex = 0;
+  });
+
+  document.querySelectorAll(".menu-toggle, #header .menu .menu-item-has-children a").forEach(function (item) {
+    item.addEventListener("click", function () {
+      document.querySelector("body").classList.toggle("js-menuOpened");
+      document.querySelector("main").toggleAttribute("inert");
+      document.querySelector("main").setAttribute("aria-hidden", !(document.querySelector("main").getAttribute("aria-hidden") == "true" ? true : false));
+      document.querySelector(".super-menu").toggleAttribute("inert");
+      document.querySelector(".super-menu").setAttribute("aria-hidden", !(document.querySelector(".super-menu").getAttribute("aria-hidden") == "true" ? true : false));
+      document.querySelector("footer").toggleAttribute("inert");
+      document.querySelector("footer").setAttribute("aria-hidden", !(document.querySelector("footer").getAttribute("aria-hidden") == "true" ? true : false));
+    });
+  });
+
+  document.querySelectorAll("#header .menu .menu-item-has-children a, #menu-toggle").forEach(function (item) {
+    item.addEventListener('keydown', (event) => {
+      if (event.code === 'Enter') {
+        item.click();
+      }
+    });
+  });
+
+  // Homepage - Slider
+  const progressCircle = document.querySelector(".autoplay-progress svg");
+  const progressContent = document.querySelector(".autoplay-progress span");
+  const swiper = new Swiper('#home-slider .swiper', {
+    loop: true,
+    grabCursor: true,
+    autoHeight: true,
+    slidesPerView: 1,
+    spaceBetween: 25,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    },
   });
 }); 

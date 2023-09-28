@@ -29,16 +29,13 @@ p {
   }
 }
 
-a:not(:hover) {
-  color: var(--black);
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.title {
   font-style: normal;
   font-family: var(--bold);
   font-weight: 700;
@@ -180,6 +177,39 @@ h6,
   }
 }
 
+main a:not([class]),
+footer a:not([class]) {
+  width: unset;
+  position: relative;
+  color: var(--black);
+  cursor: pointer;
+  transition: color ease 350ms;
+}
+
+main a:not([class]):before,
+footer a:not([class]):before {
+  content: "";
+  top: 35%;
+  right: -1px;
+  bottom: 0;
+  left: -1px;
+  display: block;
+  position: absolute;
+  background-color: var(--secondary);
+  z-index: -1;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform ease 350ms;
+}
+
+main a:not([class]):hover:before,
+main a:not([class]):focus:before,
+footer a:not([class]):hover:before,
+footer a:not([class]):focus:before {
+  transform: scaleX(1);
+}
+
+/* Special titles */
 .highlighted {
   width: fit-content;
   margin: 0 auto;

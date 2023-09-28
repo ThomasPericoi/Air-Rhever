@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_650994c22e89d",
-            "label": "En-tête",
+            "label": "Général - En-tête",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -39,7 +39,7 @@
         },
         {
             "key": "field_650994982e89c",
-            "label": "Pied de page",
+            "label": "Général - Pied de page",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -75,8 +75,44 @@
             "delay": 0
         },
         {
+            "key": "field_6511883b795da",
+            "label": "Adresse",
+            "name": "footer_address",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_65119a1c2392b",
+            "label": "Lien du bouton de contact",
+            "name": "footer_contact_url",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url"
+        },
+        {
             "key": "field_650eacf540cf5",
-            "label": "Calendrier",
+            "label": "Page - Calendrier",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -90,6 +126,26 @@
             },
             "placement": "left",
             "endpoint": 0
+        },
+        {
+            "key": "field_6511a30c08e25",
+            "label": "Introduction",
+            "name": "events_introduction",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_650ead0c40cf6",
@@ -175,5 +231,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695460834
+    "modified": 1695654895
 }

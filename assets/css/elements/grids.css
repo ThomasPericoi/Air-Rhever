@@ -1,5 +1,72 @@
 /* #Grids
 --------------------------------------------------------------- */
+/* Directory grid */
+.directory-grid {
+    display: grid;
+    grid-gap: 3rem;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media screen and (min-width: 1200px) {
+    .directory-grid.grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.directory-grid .grid-element {
+    width: 100%;
+    z-index: 0;
+    box-sizing: border-box;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: var(--border-radius);
+    background: var(--white);
+}
+
+@media screen and (min-width: 992px) {
+    .directory-grid .grid-element {
+        flex-direction: row;
+    }
+}
+
+.directory-grid .grid-element .content {
+    flex-grow: 1;
+}
+
+.directory-grid .grid-element .content a {
+    width: fit-content;
+    display: block;
+}
+
+.directory-grid .grid-element .status {
+    margin-top: -1rem;
+    font-weight: 700;
+    text-align: center;
+    font-style: italic;
+}
+
+.directory-grid .grid-element figure {
+    max-width: 175px;
+    margin: 0 auto;
+    filter: grayscale(1);
+}
+
+@media screen and (min-width: 992px) {
+    .directory-grid .grid-element figure {
+        margin: unset;
+    }
+}
+
+.directory-grid .grid-element figure img {
+    width: 175px;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
 /* Rainbow grid */
 .rainbow-grid {
     display: grid;
@@ -59,6 +126,7 @@
     font-style: italic;
     font-weight: 700;
     text-transform: uppercase;
+    font-family: var(--bold);
 }
 
 .rainbow-grid .grid-element .date {
@@ -97,10 +165,4 @@
 
 .rainbow-grid .grid-element[data-timeline="past"] .date:after {
     content: "Déroulé";
-}
-
-.rainbow-grid .grid-element[data-timeline="future"]:nth-child(1) .date:after {
-    content: "Prochain";
-    color: var(--black);
-    background-color: var(--white);
 }

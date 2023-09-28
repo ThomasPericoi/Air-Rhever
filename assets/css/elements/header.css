@@ -2,10 +2,17 @@
 --------------------------------------------------------------- */
 #header {
     width: 100%;
+    padding: 1em 0;
     position: relative;
     background-color: var(--primary);
-    background: linear-gradient(90deg, var(--primary) 25%, var(--secondary) 75%);
+    background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 33%);
     z-index: 99;
+}
+
+@media screen and (min-width: 1200px) {
+    #header {
+        padding: 0;
+    }
 }
 
 #header .inner-header {
@@ -17,41 +24,56 @@
 
 #header .custom-logo {
     width: 100%;
-    max-width: 115px;
+    max-width: 135px;
     height: auto;
+    filter: brightness(0) invert(1);
 }
 
-/* Menu */
+/* Menu Desktop */
 #header .menu-header {
     display: none;
     align-items: center;
     justify-content: flex-end;
     flex-direction: row;
     background-color: unset;
+    transition: opacity ease 350ms;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
     #header .menu-header {
         display: flex;
     }
 }
 
-#header .menu-header li a {
+.menu-header li a {
     width: unset;
-    padding: 3rem 1em;
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     color: var(--black);
     font-weight: 500;
+    font-family: var(--bold);
     text-decoration: none;
-    text-transform: uppercase;
     cursor: pointer;
     transition: color ease 350ms;
 }
 
+@media screen and (min-width: 1200px) {
+    #header .menu-header>li>a {
+        padding: 3rem 1em;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+}
+
+#header .menu-header li a+.sub-menu {
+    display: none;
+}
+
 #header .menu-header li a:before {
     content: "";
-    top: 48%;
+    top: 47.5%;
     right: 1rem;
     bottom: calc(0% + 3rem);
     left: 1rem;
@@ -67,4 +89,225 @@
 #header .menu-header li a:hover:before,
 #header .menu-header li a:focus:before {
     transform: scaleX(1);
+}
+
+#header .menu-header li.menu-item-has-children a:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-size: 20px 20px;
+    background-image: url(../../icons/plus-circle.svg);
+    transform: scale(1);
+    transition: transform ease 350ms;
+}
+
+#header .menu-header li.menu-item-has-children a:hover:after,
+#header .menu-header li.menu-item-has-children a:focus:after {
+    transform: scale(1.1);
+}
+
+/* Toggle */
+.menu-toggle-col {
+    width: 30px;
+    transition: opacity ease 350ms;
+}
+
+.menu-toggle-wrapper {
+    position: relative;
+}
+
+#menu-toggle {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#menu-toggle:focus+div {
+    outline: dashed 1px var(--black);
+    outline-offset: 6px;
+}
+
+.menu-toggle-open {
+    max-width: 30px;
+    height: 30px;
+    pointer-events: none;
+}
+
+.menu-toggle-open>span {
+    margin-top: 13px;
+}
+
+.menu-toggle-open>span,
+.menu-toggle-open>span:before,
+.menu-toggle-open>span:after {
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    display: block;
+    background-color: var(--black);
+}
+
+.menu-toggle-open>span:before,
+.menu-toggle-open>span:after {
+    width: 20px;
+    right: 0;
+}
+
+.menu-toggle-open>span:before {
+    content: "";
+    margin-top: -13px;
+    transition: width ease 350ms;
+}
+
+.menu-toggle-open>span:after {
+    content: "";
+    margin-top: 13px;
+    transition: width ease 350ms 90ms;
+}
+
+.menu-toggle-wrapper:hover .menu-toggle-open>span:before,
+.menu-toggle-wrapper:focus .menu-toggle-open>span:before,
+.menu-toggle-wrapper:hover .menu-toggle-open>span:after,
+.menu-toggle-wrapper:focus .menu-toggle-open>span:after {
+    width: 30px;
+}
+
+/* Super Menu */
+body.js-menuOpened {
+    overflow: hidden;
+}
+
+body.js-menuOpened #header .menu,
+body.js-menuOpened #header .menu-toggle-col {
+    opacity: 0.55;
+}
+
+.super-menu-overlay {
+    content: "";
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity ease 350ms;
+    pointer-events: none;
+}
+
+.js-menuOpened .super-menu-overlay {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.super-menu-wrapper {
+    width: 100%;
+    height: calc(100% - var(--header-height));
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    z-index: 25;
+    background-color: var(--white);
+    transform: translateX(100%);
+    overflow-y: auto;
+    transition: transform ease 350ms;
+}
+
+@media screen and (min-width: 1200px) {
+    .super-menu-wrapper {
+        max-width: 450px;
+    }
+}
+
+.js-menuOpened .super-menu-wrapper {
+    transform: translateX(0);
+}
+
+.super-menu-wrapper .container {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.super-menu-wrapper .menu-toggle-close {
+    margin-left: auto;
+    padding: 0;
+    display: block;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.super-menu-wrapper .menu-toggle-close svg {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-header-mobile {
+    margin-top: var(--spacing-section-inner);
+}
+
+.menu-header-mobile li a {
+    width: fit-content;
+    padding: 0.75rem 0;
+    position: relative;
+    font-size: 1.25em;
+}
+
+.menu-header-mobile li a[href]:before {
+    content: "";
+    top: 45%;
+    right: -0.5rem;
+    bottom: 0.75rem;
+    left: -0.5rem;
+    z-index: -1;
+    display: block;
+    position: absolute;
+    background-color: var(--secondary);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform ease 350ms;
+}
+
+.menu-header-mobile li a[href]:hover:before,
+.menu-header-mobile li a[href]:focus:before {
+    transform: scaleX(1);
+}
+
+@media screen and (min-width: 1200px) {
+    .menu-header-mobile li a {
+        padding: 0.75rem 0;
+        text-transform: uppercase;
+        font-size: 1.15em;
+    }
+}
+
+.menu-header-mobile .sub-menu {
+    padding-left: 1.5rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .menu-header-mobile .sub-menu {
+        padding-left: 2.5rem;
+    }
 }

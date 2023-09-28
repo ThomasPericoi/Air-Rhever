@@ -36,10 +36,11 @@ add_action('init', 'register_custom_post_types');
 function register_custom_taxonomy()
 {
     register_taxonomy(
-        'event_category',
+        'event_type',
         array('event'),
         array(
-            'label' => __('Catégories', 'rhever'),
+            'label' => __('Types', 'rhever'),
+            'public' => false,
             'show_ui' => true,
             'show_admin_column' => true,
             'show_in_rest' => true,
@@ -53,7 +54,7 @@ add_action('init', 'register_custom_taxonomy');
 // Order events by custom dates
 function order_event_by_date_admin($query)
 {
-    if (isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'event') {
+    if (isset($query->query_vars['post_type']) && (($query->query_vars['post_type'] == 'event')) && (is_archive() || is_admin())) {
         $query->set('orderby', 'meta_value');
         $query->set('meta_key', 'event_date');
         $query->set('order', 'DESC');
@@ -68,7 +69,7 @@ add_action('pre_get_posts', 'order_event_by_date_admin');
 // Register blocks
 function register_acf_blocks()
 {
-    $blocks = ["sample"];
+    $blocks = ["cta"];
 
     foreach ($blocks as $block) {
         register_block_type(__DIR__ . '/blocks/' . $block);

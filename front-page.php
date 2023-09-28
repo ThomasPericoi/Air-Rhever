@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <!-- Hero -->
 <?php
 $title = get_field('home_title') ?: get_bloginfo("name");
@@ -16,7 +17,7 @@ $description = get_field('home_description') ?: get_bloginfo("description");
         if ($posts) : ?>
             <div class="btn-wrapper">
                 <?php foreach ($posts as $post) : setup_postdata($post); ?>
-                    <a href="<?php the_permalink(); ?>" class="btn btn-primary btn-icon-corner-down-right"><?php echo __("Consulter le dernier éditorial", "rhever"); ?></a>
+                    <a href="<?php esc_url(the_permalink()); ?>" class="btn btn-primary btn-icon-corner-down-right"><?php echo __("Consulter le dernier éditorial", "rhever"); ?></a>
                 <?php endforeach; ?>
             </div>
     </div>
@@ -24,40 +25,49 @@ $description = get_field('home_description') ?: get_bloginfo("description");
         wp_reset_postdata(); ?>
 </section>
 
-<!-- About -->
-<?php
-$title = get_field('home_about_title');
-$text = get_field('home_about_text');
-$image = get_field('home_about_image');
-?>
-<section id="home-about" class="cta-large cta-secondary js-toBeTriggered">
-    <div class="container container-lg">
-        <div class="content">
-            <?php if ($title) : ?>
-                <h2 class="highlighted"><?php echo $title; ?></h2>
-            <?php endif; ?>
-            <?php if ($text) : ?>
-                <?php echo $text; ?>
-            <?php endif; ?>
-            <a href="#" class="btn btn-icon-search"><?php echo __("L'association en détail", "rhever"); ?></a>
+<!-- Slider -->
+<?php if (have_rows('slider_elements')) : ?>
+    <section id="home-slider">
+        <div class="container container-lg">
+            <div class="slider swiper">
+                <div class="swiper-wrapper">
+                    <?php while (have_rows('slider_elements')) : the_row();
+                        $image = get_sub_field('image');
+                        $title = get_sub_field('title');
+                        $text = get_sub_field('text');
+                        $button = get_sub_field('button');
+                    ?>
+                        <div class="swiper-slide">
+                            <?php echo wp_get_attachment_image($image, 'full'); ?>
+                            <div class="content">
+                                <?php if ($title) : ?>
+                                    <h2 class="highlighted"><?php echo $title; ?></h2>
+                                <?php endif; ?>
+                                <?php if ($text) : ?>
+                                    <div><?php echo $text; ?></div>
+                                <?php endif; ?>
+                                <?php if ($button) : ?>
+                                    <a href="<?php echo esc_url($button["url"]); ?>" target="<?php echo $button["target"]; ?>" class="btn"><?php echo $button["title"]; ?></a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
-        <figure>
-            <?php if (!empty($image)) : ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php endif; ?>
-        </figure>
-    </div>
-</section>
+    </section>
+<?php endif; ?>
 
 <!-- Calendar -->
 <?php $today = date('Ymd');
 global $post;
 $posts = get_posts(array(
-    'numberposts' => 3,
+    'numberposts' => 4,
     'post_type'   => 'event',
     'orderby' => 'meta_value',
-    'meta_key' => 'event_date',
     'order' => 'ASC',
+    'meta_key' => 'event_date',
     'meta_query'    => array(array(
         'key' => 'event_date',
         'value' => $today,
@@ -67,7 +77,7 @@ $posts = get_posts(array(
 )); ?>
 <section id="home-calendar">
     <div class="container container-sm">
-        <h2 class="highlighted highlighted-primary"><?php echo get_field('home_calendar_title'); ?></h2>
+        <h2 class="highlighted highlighted-secondary"><?php echo get_field('home_calendar_title'); ?></h2>
         <?php if ($posts) : ?>
             <div class="rainbow-grid grid-2 events events-future">
                 <?php foreach ($posts as $post) : setup_postdata($post); ?>
@@ -76,7 +86,7 @@ $posts = get_posts(array(
                         <div class="content">
                             <h3><?php echo get_the_title(); ?></h3>
                             <?php
-                            $categories = get_the_terms(get_the_ID(), 'event_category');
+                            $categories = get_the_terms(get_the_ID(), 'event_type');
                             $category_name = $categories[0]->name;
                             ?>
                             <?php if ($categories) : ?>
@@ -91,7 +101,7 @@ $posts = get_posts(array(
         <?php else : echo __('Il n\'y a aucun événement de planifié pour le moment.', 'rhever');
         endif; ?>
         <div class="btn-wrapper">
-            <a href="<?php echo get_post_type_archive_link('event'); ?>" class="btn btn-simple btn-icon-arrow-right"><?php echo __("Voir tous les événements de RHEVER", "rhever"); ?></a>
+            <a href="<?php echo esc_url(get_post_type_archive_link('event')); ?>" class="btn btn-simple btn-icon-arrow-right"><?php echo __("Voir tous les événements de RHEVER", "rhever"); ?></a>
         </div>
 </section>
 <?php wp_reset_postdata();  ?>

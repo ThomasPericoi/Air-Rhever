@@ -1,0 +1,13 @@
+{
+    "name": "acf/cta",
+    "title": "CTA",
+    "description": "Un CTA avec image et lien.",
+    "category": "rhever",
+    "icon": "megaphone",
+    "keywords": [
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "cta.php"
+    }
+}
