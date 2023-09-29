@@ -1,5 +1,12 @@
 <?php get_header(); ?>
 
+<!-- Breadcrumbs -->
+<section id="breadcrumbs">
+    <div class="container">
+        <?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+    </div>
+</section>
+
 <!-- Hero -->
 <?php $introduction = get_field("events_introduction", "option"); ?>
 <section id="events-hero" class="hero">

@@ -1,0 +1,7 @@
+/* #Breadcrumbs
+--------------------------------------------------------------- */
+#breadcrumbs {
+  margin-top: calc(var(--spacing-section-inner) * -1);
+  margin-bottom: var(--spacing-section-outer);
+  font-family: var(--bold);
+}

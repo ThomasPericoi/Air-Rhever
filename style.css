@@ -30,6 +30,7 @@ Text Domain: rhever
 /* #Elements
 --------------------------------------------------------------- */
 
+@import "./assets/css/elements/breadcrumbs.css";
 @import "./assets/css/elements/buttons.css";
 @import "./assets/css/elements/containers.css";
 @import "./assets/css/elements/forms.css";
