@@ -12,7 +12,7 @@
 
     <!-- Header -->
     <header id="header" class="header">
-        <div class="container">
+        <div class="container container-lg">
             <div class="inner-header">
                 <?php
                 if (function_exists('the_custom_logo')) {

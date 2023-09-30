@@ -12,6 +12,13 @@ html {
   background: var(--primary);
 }
 
+main {
+  margin: var(--spacing-section-outer) 0;
+  animation: fadeIn ease 850ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
 .sr-only {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
@@ -22,9 +29,17 @@ html {
   overflow: hidden;
 }
 
-main {
-  margin: var(--spacing-section-outer) 0;
-  animation: fadeIn ease 850ms;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.logged-in-displayed {
+  display: none;
+  visibility: hidden;
+}
+
+.logged-in .logged-in-displayed {
+  display: initial;
+  visibility: initial;
+}
+
+.logged-in .logged-in-hidden {
+  display: none;
+  visibility: hidden;
 }

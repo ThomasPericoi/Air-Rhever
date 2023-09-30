@@ -91,3 +91,42 @@ function register_block_category($categories, $post)
     );
 }
 add_filter('block_categories_all', 'register_block_category', 10, 2);
+
+/* USER ROLE(S)
+--------------------------------------------------------------- */
+
+// Add and delete roles
+function manage_user_roles()
+{
+    remove_role('subscriber');
+    remove_role('editor');
+    remove_role('contributor');
+    remove_role('author');
+    add_role('member', 'Membre RHEVER', array(
+        'read' => true
+    ));
+}
+add_action('init', 'manage_user_roles');
+
+// Redirect to homepage except for administrators
+function login_redirect_members($url, $request, $user)
+{
+    if ($user && is_object($user) && is_a($user, 'WP_User')) {
+        if ($user->has_cap('administrator')) {
+            $url = admin_url();
+        } else {
+            $url = home_url();
+        }
+    }
+    return $url;
+}
+add_filter('login_redirect', 'login_redirect_members', 10, 3);
+
+// Hide admin bar except for administrators
+function remove_admin_bar()
+{
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+    }
+}
+add_action('after_setup_theme', 'remove_admin_bar');
