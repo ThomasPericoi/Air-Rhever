@@ -31,8 +31,8 @@ $args = [
         'custom-fields',
     ],
     'taxonomies' => [],
-    'has_archive' => true,
-    'rewrite' => ['slug' => 'edito', 'with_front' => true],
+    'has_archive' => false,
+    'rewrite' => ['slug' => 'editos', 'with_front' => true],
     'menu_position' => 6,
     'menu_icon' => 'dashicons-edit',
 ];

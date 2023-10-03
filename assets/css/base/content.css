@@ -5,36 +5,36 @@
     margin-bottom: 2rem;
 }
 
-.formatted>ul li,
-.formatted>ol li {
+.formatted ul>li,
+.formatted ol>li {
     padding-left: 30px;
     margin-bottom: 0.65em;
     position: relative;
     text-indent: 0;
 }
 
-.formatted>ol li {
+.formatted ol>li {
     counter-increment: item;
 }
 
-.formatted>ul li:before,
-.formatted>ol li:before {
+.formatted ul>li:before,
+.formatted ol>li:before {
     display: block;
     position: absolute;
     top: 1em;
     left: 5px;
 }
 
-.formatted>ul li:before {
+.formatted ul>li:before {
     content: "";
-    border: 5px solid var(--secondary);
+    border: 5px solid var(--primary);
     border-radius: 50%;
     transform: translateY(-80%);
 }
 
-.formatted>ol li:before {
+.formatted ol>li:before {
     content: counter(item);
-    color: var(--secondary);
+    color: var(--primary);
     font-weight: 700;
     transform: translateY(-70%);
 }

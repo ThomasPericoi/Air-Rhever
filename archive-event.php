@@ -22,7 +22,7 @@
 <section id="events-index">
     <div class="container">
         <?php if (have_posts()) : ?>
-            <div class="rainbow-grid grid-3 events events-future">
+            <div class="rainbow-grid grid-3 events">
                 <?php
                 while (have_posts()) : the_post(); ?>
                     <?php $timeline = (get_field('event_date', false, false) < date('Ymd')) ? "past" : "future"; ?>
@@ -36,7 +36,9 @@
                             <?php if ($categories) : ?>
                                 <span class="category"><?php echo $category_name; ?></span>
                             <?php endif; ?>
-                            <p><?php echo get_the_excerpt(); ?></p>
+                            <?php if (has_excerpt()) : ?>
+                                <p><?php echo get_the_excerpt(); ?></p>
+                            <?php endif; ?>
                         </div>
                         <div class="date"><span><?php echo __("Le ", "rhever") . get_field('event_date'); ?></span></div>
                     </a>

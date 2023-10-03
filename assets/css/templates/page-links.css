@@ -1,22 +1,19 @@
-/* #Page directory
+/* #Page links
 --------------------------------------------------------------- */
 /* Hero */
-#directory-hero {
+#links-hero {
     max-width: 1000px;
     margin: var(--spacing-section-inner) auto;
     text-align: center;
 }
 
-#directory-hero h1 {
+#links-hero h1 {
     margin-bottom: var(--spacing-title);
 }
 
 /* List */
-#directory-list {
-    padding: var(--spacing-section-inner) 0;
-    background-color: var(--secondary);
-}
-
-#directory-list h2 span {
-    text-transform: uppercase;
+.buttons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }

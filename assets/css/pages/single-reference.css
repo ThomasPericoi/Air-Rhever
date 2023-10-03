@@ -1,0 +1,6 @@
+/* #Single reference
+--------------------------------------------------------------- */
+.single-reference h1 {
+    margin-bottom: var(--spacing-title) !important;
+    text-align: center;
+}

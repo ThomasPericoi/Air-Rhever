@@ -1,0 +1,18 @@
+/* #Archive reference
+--------------------------------------------------------------- */
+#references-hero {
+    margin: var(--spacing-section-outer) auto;
+}
+
+#references-hero h1 {
+    margin-bottom: var(--spacing-title);
+}
+
+#references-index .reference .content {
+    clip-path: inset(6px);
+}
+
+#references-index .reference:hover .content,
+#references-index .reference:focus .content {
+    clip-path: inset(12px);
+}

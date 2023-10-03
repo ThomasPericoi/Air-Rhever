@@ -33,10 +33,11 @@ Text Domain: rhever
 @import "./assets/css/elements/breadcrumbs.css";
 @import "./assets/css/elements/buttons.css";
 @import "./assets/css/elements/containers.css";
+@import "./assets/css/elements/footer.css";
 @import "./assets/css/elements/forms.css";
 @import "./assets/css/elements/grids.css";
 @import "./assets/css/elements/header.css";
-@import "./assets/css/elements/footer.css";
+@import "./assets/css/elements/images.css";
 
 /* #Blocks
 --------------------------------------------------------------- */
@@ -49,13 +50,19 @@ Text Domain: rhever
 --------------------------------------------------------------- */
 
 @import "./assets/css/templates/page-directory.css";
+@import "./assets/css/templates/page-links.css";
+@import "./assets/css/templates/page-quizzes.css";
 
 /* #Pages
 --------------------------------------------------------------- */
 
 @import "./assets/css/pages/archive-event.css";
+@import "./assets/css/pages/archive-issue.css";
+@import "./assets/css/pages/archive-reference.css";
 @import "./assets/css/pages/front-page.css";
 @import "./assets/css/pages/page.css";
 @import "./assets/css/pages/single.css";
 @import "./assets/css/pages/single-edito.css";
 @import "./assets/css/pages/single-event.css";
+@import "./assets/css/pages/single-issue.css";
+@import "./assets/css/pages/single-reference.css";

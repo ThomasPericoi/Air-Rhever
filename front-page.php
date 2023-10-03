@@ -79,7 +79,7 @@ $posts = get_posts(array(
     <div class="container container-sm">
         <h2 class="highlighted highlighted-secondary"><?php echo get_field('home_calendar_title'); ?></h2>
         <?php if ($posts) : ?>
-            <div class="rainbow-grid grid-2 events events-future">
+            <div class="rainbow-grid grid-1 events events-future">
                 <?php foreach ($posts as $post) : setup_postdata($post); ?>
                     <?php $timeline = (get_field('event_date', false, false) < date('Ymd')) ? "past" : "future"; ?>
                     <a href="<?php the_permalink(); ?>" class="grid-element event" data-timeline="<?php echo $timeline; ?>">

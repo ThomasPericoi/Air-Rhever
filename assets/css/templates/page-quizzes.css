@@ -1,11 +1,12 @@
-/* #Page
+/* #Page quizzes
 --------------------------------------------------------------- */
-.page-template-default .hero {
+/* Hero */
+#quizzes-hero {
     max-width: 1000px;
     margin: var(--spacing-section-inner) auto;
     text-align: center;
 }
 
-.page-template-default h1 {
+#quizzes-hero h1 {
     margin-bottom: var(--spacing-title);
 }

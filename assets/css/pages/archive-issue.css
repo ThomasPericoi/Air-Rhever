@@ -1,0 +1,18 @@
+/* #Archive issue
+--------------------------------------------------------------- */
+#issues-hero {
+    margin: var(--spacing-section-outer) auto;
+}
+
+#issues-hero h1 {
+    margin-bottom: var(--spacing-title);
+}
+
+#issues-index .reference .content {
+    clip-path: inset(6px);
+}
+
+#issues-index .reference:hover .content,
+#issues-index .reference:focus .content {
+    clip-path: inset(12px);
+}

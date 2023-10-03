@@ -24,7 +24,7 @@ if (function_exists('acf_add_options_page')) {
 // Register post types
 function register_custom_post_types()
 {
-    $post_types = ["edito", "event"];
+    $post_types = ["edito", "event", "issue", "reference"];
 
     foreach ($post_types as $post_type) {
         include_once(__DIR__ . '/post-types/' . $post_type . '.php');

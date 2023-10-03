@@ -317,6 +317,7 @@
                         "Rhumatisme inflammatoire": "Rhumatisme inflammatoire",
                         "Rhumatologie générale hospitalière": "Rhumatologie générale hospitalière",
                         "RIC": "RIC",
+                        "Syndromes auto-inflammatoires": "Syndromes auto-inflammatoires",
                         "Synovite villonodulaire": "Synovite villonodulaire",
                         "Autre": "Autre"
                     },
@@ -400,5 +401,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695889104
+    "modified": 1696325523
 }

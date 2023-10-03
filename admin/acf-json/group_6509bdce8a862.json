@@ -116,11 +116,11 @@
             "delay": 1
         },
         {
-            "key": "field_651326cba8940",
-            "label": "Avant",
-            "name": "",
+            "key": "field_651c504fb3677",
+            "label": "Président(s) de séance",
+            "name": "event_president",
             "aria-label": "",
-            "type": "tab",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -129,57 +129,15 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_651328559cb2c",
-            "label": "Documents à remplir",
-            "name": "event_quizzes",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Ajouter un élément",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_651328df98f3c",
-                    "label": "Questionnaire",
-                    "name": "quizz",
-                    "aria-label": "",
-                    "type": "file",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "parent_repeater": "field_651328559cb2c"
-                }
-            ]
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_651328979cb2d",
-            "label": "Documents nécessaires",
+            "label": "Document(s) complémentaire(s)",
             "name": "event_documents",
             "aria-label": "",
             "type": "repeater",
@@ -223,8 +181,65 @@
             ]
         },
         {
+            "key": "field_651326cba8940",
+            "label": "Pré-événement",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_651c43e671a4e",
+            "label": "Ordre du jour",
+            "name": "event_program",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
+            "key": "field_651c00e2076b7",
+            "label": "Intégration du questionnaire",
+            "name": "event_quiz",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_651326d7a8941",
-            "label": "Après",
+            "label": "Post-événement",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -244,6 +259,91 @@
             "label": "Compte-rendu associé",
             "name": "event_report",
             "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_651c53a769404",
+            "label": "Résultats du questionnaire",
+            "name": "event_quiz_results",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_651c53c169405",
+            "label": "Bibliographie(s) associée(s)",
+            "name": "event_bibliographies",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Ajouter un élément",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_651c8824d91be",
+                    "label": "Bibliographie",
+                    "name": "bibliography",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "parent_repeater": "field_651c53c169405"
+                }
+            ]
+        },
+        {
+            "key": "field_651c541169407",
+            "label": "Référentiel(s) associée(s)",
+            "name": "event_references",
+            "aria-label": "",
             "type": "post_object",
             "instructions": "",
             "required": 0,
@@ -254,14 +354,12 @@
                 "id": ""
             },
             "post_type": [
-                "report"
+                "reference"
             ],
-            "post_status": [
-                "publish"
-            ],
+            "post_status": "",
             "taxonomy": "",
             "return_format": "object",
-            "multiple": 0,
+            "multiple": 1,
             "allow_null": 0,
             "bidirectional": 0,
             "ui": 1,
@@ -286,5 +384,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695979091
+    "modified": 1696368707
 }

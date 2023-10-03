@@ -1,0 +1,28 @@
+/* #Images
+--------------------------------------------------------------- */
+.featured-image {
+    margin-top: var(--spacing-section-inner);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.featured-image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transform: rotate(2deg);
+    background-color: var(--primary);
+    border-radius: var(--border-radius);
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}

@@ -29,6 +29,16 @@ p {
   }
 }
 
+strong,
+b {
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
 h1,
 h2,
 h3,

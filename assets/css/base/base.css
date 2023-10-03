@@ -43,3 +43,7 @@ main {
   display: none;
   visibility: hidden;
 }
+
+.pdfjs-fullscreen {
+  display: none;
+}
