@@ -1,2 +1,15 @@
 /* #Single
 --------------------------------------------------------------- */
+.single h1 {
+    margin-bottom: var(--spacing-title) !important;
+    text-align: center;
+}
+
+.single .category {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: var(--bold);
+    text-align: center;
+    color: var(--primary);
+}

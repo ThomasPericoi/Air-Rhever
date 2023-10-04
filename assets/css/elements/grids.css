@@ -113,6 +113,16 @@
     text-decoration: none;
     border-radius: var(--border-radius);
     background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+    overflow: hidden;
+}
+
+.rainbow-grid .grid-element .image {
+    width: 100%;
+}
+
+.rainbow-grid .grid-element .image img {
+    width: 100%;
+    height: auto;
 }
 
 .rainbow-grid .grid-element .content {

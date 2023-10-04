@@ -1,0 +1,10 @@
+/* #Index
+--------------------------------------------------------------- */
+#index-hero {
+    margin: var(--spacing-section-outer) auto;
+    text-align: center;
+}
+
+#index-hero h1 {
+    margin-bottom: var(--spacing-title);
+}

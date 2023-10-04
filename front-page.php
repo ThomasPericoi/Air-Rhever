@@ -63,7 +63,7 @@ $description = get_field('home_description') ?: get_bloginfo("description");
 <?php $today = date('Ymd');
 global $post;
 $posts = get_posts(array(
-    'numberposts' => 4,
+    'numberposts' => 3,
     'post_type'   => 'event',
     'orderby' => 'meta_value',
     'order' => 'ASC',
@@ -73,6 +73,12 @@ $posts = get_posts(array(
         'value' => $today,
         'compare' => '>=',
         'type' => 'DATE'
+    )),
+    'tax_query' => array(array(
+        'taxonomy' => 'event_type',
+        'field' => 'slug',
+        'terms' => array("congres"),
+        'operator' => 'NOT IN'
     ))
 )); ?>
 <section id="home-calendar">

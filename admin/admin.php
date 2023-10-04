@@ -32,7 +32,7 @@ function register_custom_post_types()
 }
 add_action('init', 'register_custom_post_types');
 
-// Add custom landing page taxonomy
+// Add custom events taxonomy
 function register_custom_taxonomy()
 {
     register_taxonomy(
@@ -54,14 +54,44 @@ add_action('init', 'register_custom_taxonomy');
 // Order events by custom dates
 function order_event_by_date_admin($query)
 {
-    if (isset($query->query_vars['post_type']) && (($query->query_vars['post_type'] == 'event')) && (is_archive() || is_admin())) {
+    if (isset($query->query_vars['post_type']) && (($query->query_vars['post_type'] == 'event')) && is_archive()) {
         $query->set('orderby', 'meta_value');
         $query->set('meta_key', 'event_date');
         $query->set('order', 'DESC');
+        if (!is_admin()) {
+            $tax_query = array(
+                array(
+                    'taxonomy' => 'event_type',
+                    'field' => 'slug',
+                    'terms' => array("congres"),
+                    'operator' => 'NOT IN'
+                )
+            );
+            $query->set('tax_query', $tax_query);
+        }
     }
     return $query;
 }
 add_action('pre_get_posts', 'order_event_by_date_admin');
+
+// Add "congrès" events to index
+function add_my_post_types_to_query($query)
+{
+    if (is_home() && $query->is_main_query()) {
+        $query->set('post_type', array('post', 'event'));
+        $tax_query = array(
+            array(
+                'taxonomy' => 'event_type',
+                'field' => 'slug',
+                'terms' => array("assemblee-generale", "reunion-rhever"),
+                'operator' => 'NOT IN'
+            )
+        );
+        $query->set('tax_query', $tax_query);
+    }
+    return $query;
+}
+add_action('pre_get_posts', 'add_my_post_types_to_query');
 
 /* BLOCK(S)
 --------------------------------------------------------------- */

@@ -55,6 +55,11 @@ $references = get_field("event_references");
                 </div>
             <?php endif; ?>
         </div>
+        <?php if (has_post_thumbnail()) : ?>
+            <div class="featured-image">
+                <?php the_post_thumbnail(); ?>
+            </div>
+        <?php endif; ?>
         <?php the_content(); ?>
         <?php if (get_field('event_date', false, false) < date('Ymd')) : ?>
             <!-- After -->

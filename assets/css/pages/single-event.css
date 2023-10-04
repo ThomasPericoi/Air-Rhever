@@ -40,3 +40,8 @@
 .single-event .informations h2 {
     margin-bottom: 0;
 }
+
+.single-event iframe {
+    margin: 0 auto;
+    display: block;
+}

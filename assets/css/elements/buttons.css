@@ -114,3 +114,22 @@
 .btn-icon-search:after {
     background-image: url(../../icons/search.svg);
 }
+
+/* Pagination */
+.navigation.pagination {
+    margin-top: var(--spacing-section-inner);
+    font-weight: 700;
+    font-family: var(--bold);
+}
+
+.navigation.pagination .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.navigation.pagination a {
+    color: var(--primary);
+    text-decoration: none;
+}

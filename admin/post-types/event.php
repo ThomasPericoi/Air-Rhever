@@ -26,6 +26,7 @@ $args = [
     'capability_type' => 'page',
     'supports' => [
         'title',
+        'thumbnail',
         'editor',
         'excerpt',
         'custom-fields',

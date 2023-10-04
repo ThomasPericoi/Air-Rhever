@@ -8,6 +8,12 @@
     gap: 5px;
 }
 
+.featured-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
 .featured-image:before {
     content: "";
     position: absolute;
@@ -16,13 +22,12 @@
     bottom: 0;
     left: 0;
     z-index: -1;
-    transform: rotate(2deg);
+    transform: rotate(0deg);
     background-color: var(--primary);
     border-radius: var(--border-radius);
+    transition: transform ease 350ms;
 }
 
-.featured-image img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--border-radius);
+.js-viewed .featured-image:before {
+    transform: rotate(2deg);
 }
