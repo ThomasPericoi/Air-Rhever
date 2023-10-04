@@ -12,7 +12,7 @@
     <div class="container container-sm formatted">
         <h1><?php echo get_the_title(); ?></h1>
         <?php the_content(); ?>
-        <div class="signature"><?php echo __("L'équipe RHEVER", "rhever"); ?></div>
+        <div class="signature"><?php echo __("Le bureau RHEVER", "rhever"); ?></div>
     </div>
 </section>
 

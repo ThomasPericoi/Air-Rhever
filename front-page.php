@@ -77,8 +77,8 @@ $posts = get_posts(array(
     'tax_query' => array(array(
         'taxonomy' => 'event_type',
         'field' => 'slug',
-        'terms' => array("congres"),
-        'operator' => 'NOT IN'
+        'terms' => array("reunion-rhever"),
+        'operator' => 'IN'
     ))
 )); ?>
 <section id="home-calendar">

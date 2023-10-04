@@ -126,7 +126,7 @@
                     "choices": {
                         "liberal": "Libéral",
                         "hospital": "Hospitalier",
-                        "mixed": "Mixte"
+                        "mixed": "Exercice mixte"
                     },
                     "default_value": "mixed",
                     "return_format": "label",
@@ -401,5 +401,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696325523
+    "modified": 1696409503
 }

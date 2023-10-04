@@ -29,7 +29,7 @@
 $quizzes = get_field('quizzes');
 if ($quizzes) : ?>
     <section id="quizzes-list">
-        <div class="container container-lg">
+        <div class="container container-sm">
             <div class="documents-list">
                 <ul>
                     <?php foreach ($quizzes as $i => $item) : ?>

@@ -7,7 +7,7 @@
     </div>
 </section>
 
-
+<!-- Hero -->
 <?php
 if (is_category()) :
     $title = single_cat_title('', false);
@@ -20,8 +20,6 @@ else :
     $description = __('Retrouvez-ici les actualités de RHEVER.', 'prezevolve');
 endif;
 ?>
-
-<!-- Hero -->
 <section id="index-hero" class="hero">
     <div class="container container-sm">
         <h1><?php echo $title; ?></h1>

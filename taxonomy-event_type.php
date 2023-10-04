@@ -9,8 +9,9 @@
 
 <!-- Hero -->
 <?php
-$title = __('Le calendrier RHEVER');
-$description = get_field("events_introduction", "option");
+$term = get_queried_object();
+$title = $term->name;
+$description = $term->description;
 ?>
 <section id="events-hero" class="hero">
     <div class="container container-sm">
@@ -55,9 +56,17 @@ $description = get_field("events_introduction", "option");
 
 <!-- CTA -->
 <?php
-$title = get_field('events_cta_title', 'option');
-$text = get_field('events_cta_text', 'option');
 $image = get_field('events_cta_image', 'option');
+if (is_tax('event_type', 'reunion-rhever')) :
+    $title = __("Qu'en est-il des assemblées générales ?", "rhever");
+    $text =  __("Les assemblées générales (ou AG) sont consignées à part.", "rhever");
+    $button_label = __("Consulter les assemblées générales", "rhever");
+    $button_url = get_term_link('assemblee-generale', 'event_type');
+else :
+    $title = get_field('events_cta_title', 'option');
+    $text = get_field('events_cta_text', 'option');
+    $button_label = false;
+endif;
 ?>
 <section id="events-cta" class="cta-large cta-reverse cta-secondary js-toBeTriggered">
     <div class="container container-lg">
@@ -67,6 +76,9 @@ $image = get_field('events_cta_image', 'option');
             <?php endif; ?>
             <?php if ($text) : ?>
                 <?php echo $text; ?>
+            <?php endif; ?>
+            <?php if ($button_label) : ?>
+                <a href="<?php echo esc_url($button_url); ?>" class="btn btn-icon-calendar"><?php echo $button_label; ?></a>
             <?php endif; ?>
         </div>
         <figure>

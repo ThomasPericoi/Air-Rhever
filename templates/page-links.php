@@ -29,7 +29,7 @@
 $links = get_field('useful_links');
 if ($links) : ?>
     <section id="links-list">
-        <div class="container container-lg">
+        <div class="container container-sm">
             <div class="buttons-list">
                 <?php foreach ($links as $i => $item) : ?>
                     <a class="btn btn-secondary btn-icon-external-link" target="_blank" href="<?php echo $item['link']['url']; ?>"><?php echo $item['link']['title']; ?></a>
