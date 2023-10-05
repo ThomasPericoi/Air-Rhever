@@ -106,39 +106,3 @@ a img.aligncenter {
   width: auto;
   z-index: 100000;
 }
-
-.wp-block-table.is-style-stripes {
-  border-spacing: 0;
-  border-collapse: inherit;
-  background-color: transparent;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.wp-block-table table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-  background-color: #f0f0f0;
-}
-
-.wp-block-table.is-style-stripes td,
-.wp-block-table.is-style-stripes th {
-  border-color: transparent;
-}
-
-.wp-block-table th {
-  background-color: var(--secondary);
-  font-weight: bold;
-}
-
-.wp-block-table td,
-.wp-block-table th {
-  border: 1px solid;
-  padding: 0.5em;
-}
-
-.has-text-align-center {
-  text-align: center;
-}

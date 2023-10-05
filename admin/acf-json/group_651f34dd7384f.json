@@ -1,56 +1,11 @@
 {
-    "key": "group_651c902f35cc4",
-    "title": "PAGE - Questionnaires patients",
+    "key": "group_651f34dd7384f",
+    "title": "BLOC - Liste de fichiers",
     "fields": [
         {
-            "key": "field_651c902f3bf33",
-            "label": "Questionnaires",
-            "name": "quizzes",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "table",
-            "pagination": 0,
-            "min": 0,
-            "max": 0,
-            "collapsed": "",
-            "button_label": "Ajouter un élément",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_651c902f3fdf7",
-                    "label": "Document",
-                    "name": "document",
-                    "aria-label": "",
-                    "type": "file",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "library": "all",
-                    "min_size": "",
-                    "max_size": "",
-                    "mime_types": "",
-                    "parent_repeater": "field_651c902f3bf33"
-                }
-            ]
-        },
-        {
             "key": "field_651f350ee1cbc",
-            "label": "Questionnaires (copier)",
-            "name": "quizzes_copier",
+            "label": "Fichier",
+            "name": "files",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -96,9 +51,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "block",
                 "operator": "==",
-                "value": "templates\/page-quizzes.php"
+                "value": "acf\/files-list"
             }
         ]
     ],
@@ -111,5 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696544020
+    "modified": 1696544058
 }

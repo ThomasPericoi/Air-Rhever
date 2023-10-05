@@ -41,6 +41,10 @@
     background-position: 100%;
 }
 
+.btn a {
+    text-decoration: none;
+}
+
 /* Simple */
 .btn.btn-simple {
     height: auto;

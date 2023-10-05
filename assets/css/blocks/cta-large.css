@@ -5,9 +5,13 @@
     margin: var(--spacing-section-outer) auto;
 }
 
-@media screen and (max-width: 1199px) {
+.cta-block {
+    margin: var(--spacing-section-outer) auto !important;
+}
+
+@media screen and (min-width: 1200px) {
     .cta-block {
-        margin: var(--spacing-section-outer) auto !important;
+        margin: 2em auto !important;
     }
 }
 

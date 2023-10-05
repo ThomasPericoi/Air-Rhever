@@ -69,7 +69,7 @@ add_action('pre_get_posts', 'order_event_by_date');
 // Register blocks
 function register_acf_blocks()
 {
-    $blocks = ["cta"];
+    $blocks = ["cta", "files-list"];
 
     foreach ($blocks as $block) {
         register_block_type(__DIR__ . '/blocks/' . $block);

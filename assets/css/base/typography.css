@@ -253,3 +253,8 @@ footer a:not([class]):focus:before {
 .highlighted-secondary:before {
   background-color: var(--secondary);
 }
+
+.secondary-title {
+  margin-left: 10px;
+  font-weight: 500;
+}

@@ -1,0 +1,12 @@
+{
+    "name": "acf/files-list",
+    "title": "Liste de fichiers",
+    "description": "Une liste de fichiers à télécharger.",
+    "category": "rhever",
+    "icon": "paperclip",
+    "keywords": [],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "files-list.php"
+    }
+}

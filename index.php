@@ -68,8 +68,7 @@ endif;
                 <?php endwhile; ?>
             </div>
             <?php the_posts_pagination(); ?>
-
-        <?php else : echo _('Aucun article n\'a été (encore) publié', 'rhever');
+        <?php else : echo __('Aucun article n\'a été (encore) publié dans cette catégorie.', 'rhever');
         endif; ?>
     </div>
 </section>
