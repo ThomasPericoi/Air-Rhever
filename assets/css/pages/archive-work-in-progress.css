@@ -1,0 +1,18 @@
+/* #Archive work in progress
+--------------------------------------------------------------- */
+#works-in-progress-hero {
+    margin: var(--spacing-section-outer) auto;
+}
+
+#works-in-progress-hero h1 {
+    margin-bottom: var(--spacing-title);
+}
+
+#works-in-progress-index .work .content {
+    clip-path: inset(6px);
+}
+
+#works-in-progress-index .work:hover .content,
+#works-in-progress-index .work:focus .content {
+    clip-path: inset(12px);
+}

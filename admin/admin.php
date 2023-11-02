@@ -24,7 +24,7 @@ if (function_exists('acf_add_options_page')) {
 // Register post types
 function register_custom_post_types()
 {
-    $post_types = ["edito", "event", "issue", "reference"];
+    $post_types = ["edito", "event", "issue", "reference", "work-in-progress"];
 
     foreach ($post_types as $post_type) {
         include_once(__DIR__ . '/post-types/' . $post_type . '.php');
@@ -103,6 +103,9 @@ function manage_user_roles()
     remove_role('contributor');
     remove_role('author');
     add_role('member', 'Membre RHEVER', array(
+        'read' => true
+    ));
+    add_role('clinic-director', 'Chef de clinique', array(
         'read' => true
     ));
 }

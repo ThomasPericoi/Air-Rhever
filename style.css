@@ -59,6 +59,7 @@ Text Domain: rhever
 @import "./assets/css/pages/archive-event.css";
 @import "./assets/css/pages/archive-issue.css";
 @import "./assets/css/pages/archive-reference.css";
+@import "./assets/css/pages/archive-work-in-progress.css";
 @import "./assets/css/pages/front-page.css";
 @import "./assets/css/pages/index.css";
 @import "./assets/css/pages/page.css";
@@ -67,3 +68,4 @@ Text Domain: rhever
 @import "./assets/css/pages/single-event.css";
 @import "./assets/css/pages/single-issue.css";
 @import "./assets/css/pages/single-reference.css";
+@import "./assets/css/pages/single-work-progress.css";

@@ -1,0 +1,6 @@
+/* #Single work in progress
+--------------------------------------------------------------- */
+.single-work-in-progress h1 {
+    margin-bottom: var(--spacing-title) !important;
+    text-align: center;
+}
