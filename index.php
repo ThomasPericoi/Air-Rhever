@@ -17,7 +17,7 @@ elseif (is_tag()) :
     $description = tag_description();
 else :
     $title = get_the_title(get_option('page_for_posts'));
-    $description = __('Retrouvez-ici les actualités de RHEVER.', 'prezevolve');
+    $description = __('Retrouvez-ici les actualités de RHEVER.', 'rhever');
 endif;
 ?>
 <section id="index-hero" class="hero">

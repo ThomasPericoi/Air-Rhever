@@ -1,0 +1,12 @@
+/* #404
+--------------------------------------------------------------- */
+/* Hero */
+#not-found-hero {
+    max-width: 1000px;
+    margin: var(--spacing-section-outer) auto;
+    text-align: center;
+}
+
+#not-found-hero h1 {
+    margin-bottom: var(--spacing-section-inner);
+}
