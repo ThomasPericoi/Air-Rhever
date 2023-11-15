@@ -57,6 +57,7 @@ Text Domain: rhever
 --------------------------------------------------------------- */
 
 @import "./assets/css/pages/404.css";
+@import "./assets/css/pages/archive-edito.css";
 @import "./assets/css/pages/archive-event.css";
 @import "./assets/css/pages/archive-issue.css";
 @import "./assets/css/pages/archive-reference.css";

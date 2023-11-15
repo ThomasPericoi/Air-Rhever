@@ -1,0 +1,18 @@
+/* #Archive edito
+--------------------------------------------------------------- */
+#editos-hero {
+    margin: var(--spacing-section-outer) auto;
+}
+
+#editos-hero h1 {
+    margin-bottom: var(--spacing-title);
+}
+
+#editos-index .edito .content {
+    clip-path: inset(6px);
+}
+
+#editos-index .edito:hover .content,
+#editos-index .edito:focus .content {
+    clip-path: inset(12px);
+}

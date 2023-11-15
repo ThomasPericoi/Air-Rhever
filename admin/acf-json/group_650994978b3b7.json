@@ -250,6 +250,43 @@
             "delay": 0
         },
         {
+            "key": "field_65549c409bd12",
+            "label": "Page - Éditos",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_65549c529bd13",
+            "label": "Introduction",
+            "name": "editos_introduction",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_651c8436e209a",
             "label": "Page - Publications",
             "name": "",
@@ -342,5 +379,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698053207
+    "modified": 1700043960
 }

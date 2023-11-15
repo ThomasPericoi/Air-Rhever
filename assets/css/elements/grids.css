@@ -123,6 +123,7 @@
 .rainbow-grid .grid-element .image img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .rainbow-grid .grid-element .content {
