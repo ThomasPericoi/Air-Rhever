@@ -84,7 +84,7 @@ $posts = get_posts(array(
 <section id="home-calendar">
     <div class="container container-sm">
         <h2 class="highlighted highlighted-secondary"><?php echo get_field('home_calendar_title'); ?></h2>
-        <?php if ($posts) : ?>
+        <?php if ($posts && is_user_logged_in()) : ?>
             <div class="rainbow-grid grid-1 events events-future">
                 <?php foreach ($posts as $post) : setup_postdata($post); ?>
                     <?php $timeline = (get_field('event_date', false, false) < date('Ymd')) ? "past" : "future"; ?>
@@ -104,7 +104,7 @@ $posts = get_posts(array(
                     </a>
                 <?php endforeach; ?>
             </div>
-        <?php else : echo __('Il n\'y a aucun événement de planifié pour le moment.', 'rhever');
+        <?php else : echo __('Il n\'y a aucun événement de planifié pour le moment, ou bien vous n\'êtes pas connecté.', 'rhever');
         endif; ?>
         <div class="btn-wrapper">
             <a href="<?php echo esc_url(get_post_type_archive_link('event')); ?>" class="btn btn-simple btn-icon-arrow-right"><?php echo __("Voir tous les événements de RHEVER", "rhever"); ?></a>

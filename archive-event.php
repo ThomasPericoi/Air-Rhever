@@ -24,7 +24,7 @@ $description = get_field("events_introduction", "option");
 <!-- Loop -->
 <section id="events-index">
     <div class="container">
-        <?php if (have_posts()) : ?>
+        <?php if (have_posts() && is_user_logged_in()) : ?>
             <div class="rainbow-grid grid-3 events">
                 <?php
                 while (have_posts()) : the_post(); ?>
@@ -48,7 +48,7 @@ $description = get_field("events_introduction", "option");
                 <?php endwhile; ?>
             </div>
             <?php the_posts_pagination(); ?>
-        <?php else : echo __('Il n\'y a aucun événement de publié pour le moment.', 'rhever');
+        <?php else : echo __('Il n\'y a aucun événement de publié pour le moment, ou bien vous n\'êtes pas connecté.', 'rhever');
         endif; ?>
     </div>
 </section>

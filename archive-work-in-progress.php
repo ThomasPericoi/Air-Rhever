@@ -21,7 +21,7 @@
 <!-- Loop -->
 <section id="works-in-progress-index">
     <div class="container">
-        <?php if (have_posts()) : ?>
+        <?php if (have_posts() && is_user_logged_in()) : ?>
             <div class="rainbow-grid grid-1 works">
                 <?php
                 while (have_posts()) : the_post(); ?>
@@ -34,7 +34,7 @@
                 <?php endwhile; ?>
             </div>
             <?php the_posts_pagination(); ?>
-        <?php else : echo __('Il n\'y a aucun travail de publié pour le moment.', 'rhever');
+        <?php else : echo __('Il n\'y a aucun travail de publié pour le moment, ou bien vous n\'êtes pas connecté.', 'rhever');
         endif; ?>
     </div>
 </section>

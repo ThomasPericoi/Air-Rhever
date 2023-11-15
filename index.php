@@ -32,7 +32,7 @@ endif;
 <!-- Content -->
 <section>
     <div class="container">
-        <?php if (have_posts()) : ?>
+        <?php if (have_posts() && is_user_logged_in()) : ?>
 
             <div class="rainbow-grid grid-3 posts">
                 <?php
