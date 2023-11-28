@@ -32,44 +32,47 @@ endif;
 <!-- Content -->
 <section>
     <div class="container">
-        <?php if (have_posts() && is_user_logged_in()) : ?>
+        <?php if (is_user_logged_in()) : ?>
+            <?php if (have_posts()) : ?>
 
-            <div class="rainbow-grid grid-3 posts">
-                <?php
-                while (have_posts()) : the_post(); ?>
+                <div class="rainbow-grid grid-3 posts">
                     <?php
-                    if (get_post_type() == "event") :
-                        $categories = get_the_terms(get_the_ID(), 'event_type');
-                        $category_name = $categories[0]->name;
-                        $date =  __("Prévu le ", "rhever") . get_field('event_date');
-                    else :
-                        $categories = get_the_category();
-                        $category_name = $categories[0]->cat_name;
-                        $date = __("Publié le ", "rhever") . get_the_date();
-                    endif;
-                    ?>
-                    <a href="<?php esc_url(the_permalink()); ?>" class="grid-element post">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <div class="image">
-                                <?php the_post_thumbnail(); ?>
+                    while (have_posts()) : the_post(); ?>
+                        <?php
+                        if (get_post_type() == "event") :
+                            $categories = get_the_terms(get_the_ID(), 'event_type');
+                            $category_name = $categories[0]->name;
+                            $date =  __("Prévu le ", "rhever") . get_field('event_date');
+                        else :
+                            $categories = get_the_category();
+                            $category_name = $categories[0]->cat_name;
+                            $date = __("Publié le ", "rhever") . get_the_date();
+                        endif;
+                        ?>
+                        <a href="<?php esc_url(the_permalink()); ?>" class="grid-element post">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="image">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
+                            <?php endif; ?>
+                            <div class="content">
+                                <h2><?php echo get_the_title(); ?></h2>
+                                <?php if ($categories) : ?>
+                                    <span class="category"><?php echo $category_name; ?></span>
+                                <?php endif; ?>
+                                <?php if (has_excerpt()) : ?>
+                                    <p><?php echo get_the_excerpt(); ?></p>
+                                <?php endif; ?>
                             </div>
-                        <?php endif; ?>
-                        <div class="content">
-                            <h2><?php echo get_the_title(); ?></h2>
-                            <?php if ($categories) : ?>
-                                <span class="category"><?php echo $category_name; ?></span>
-                            <?php endif; ?>
-                            <?php if (has_excerpt()) : ?>
-                                <p><?php echo get_the_excerpt(); ?></p>
-                            <?php endif; ?>
-                        </div>
-                        <div class="date"><span><?php echo $date; ?></span></div>
-                    </a>
-                <?php endwhile; ?>
-            </div>
-            <?php the_posts_pagination(); ?>
-        <?php else : echo __('Aucun article n\'a été (encore) publié dans cette catégorie.', 'rhever');
-        endif; ?>
+                            <div class="date"><span><?php echo $date; ?></span></div>
+                        </a>
+                    <?php endwhile; ?>
+                </div>
+                <?php the_posts_pagination(); ?>
+            <?php else : echo __('Aucun article n\'a été (encore) publié ici.', 'rhever');
+            endif; ?>
+        <?php else : echo __('Cette page est réservée aux adhérents. Si vous êtes adhérent, <a href="' . esc_url(wp_login_url()) .  '">connectez-vous</a> pour accéder à tout le contenu.', 'rhever'); ?>
+        <?php endif; ?>
     </div>
 </section>
 

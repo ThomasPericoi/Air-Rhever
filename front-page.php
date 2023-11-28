@@ -84,28 +84,31 @@ $posts = get_posts(array(
 <section id="home-calendar">
     <div class="container container-sm">
         <h2 class="highlighted highlighted-secondary"><?php echo get_field('home_calendar_title'); ?></h2>
-        <?php if ($posts && is_user_logged_in()) : ?>
-            <div class="rainbow-grid grid-1 events events-future">
-                <?php foreach ($posts as $post) : setup_postdata($post); ?>
-                    <?php $timeline = (get_field('event_date', false, false) < date('Ymd')) ? "past" : "future"; ?>
-                    <a href="<?php the_permalink(); ?>" class="grid-element event" data-timeline="<?php echo $timeline; ?>">
-                        <div class="content">
-                            <h3><?php echo get_the_title(); ?></h3>
-                            <?php
-                            $categories = get_the_terms(get_the_ID(), 'event_type');
-                            $category_name = $categories[0]->name;
-                            ?>
-                            <?php if ($categories) : ?>
-                                <span class="category"><?php echo $category_name; ?></span>
-                            <?php endif; ?>
-                            <p><?php echo get_the_excerpt(); ?></p>
-                        </div>
-                        <div class="date"><span><?php echo __("Le ", "rhever") . get_field('event_date'); ?></span></div>
-                    </a>
-                <?php endforeach; ?>
-            </div>
-        <?php else : echo __('Il n\'y a aucun événement de planifié pour le moment, ou bien vous n\'êtes pas connecté.', 'rhever');
-        endif; ?>
+        <?php if (is_user_logged_in()) : ?>
+            <?php if ($posts) : ?>
+                <div class="rainbow-grid grid-1 events events-future">
+                    <?php foreach ($posts as $post) : setup_postdata($post); ?>
+                        <?php $timeline = (get_field('event_date', false, false) < date('Ymd')) ? "past" : "future"; ?>
+                        <a href="<?php the_permalink(); ?>" class="grid-element event" data-timeline="<?php echo $timeline; ?>">
+                            <div class="content">
+                                <h3><?php echo get_the_title(); ?></h3>
+                                <?php
+                                $categories = get_the_terms(get_the_ID(), 'event_type');
+                                $category_name = $categories[0]->name;
+                                ?>
+                                <?php if ($categories) : ?>
+                                    <span class="category"><?php echo $category_name; ?></span>
+                                <?php endif; ?>
+                                <p><?php echo get_the_excerpt(); ?></p>
+                            </div>
+                            <div class="date"><span><?php echo __("Le ", "rhever") . get_field('event_date'); ?></span></div>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            <?php else : echo __('Il n\'y a aucun événement de planifié pour le moment.', 'rhever');
+            endif; ?>
+        <?php else : echo __('Cette partie est réservée aux adhérents. Si vous êtes adhérent, <a href="' . esc_url(wp_login_url()) .  '">connectez-vous</a> pour accéder à tout le contenu.', 'rhever'); ?>
+        <?php endif; ?>
         <div class="btn-wrapper">
             <a href="<?php echo esc_url(get_post_type_archive_link('event')); ?>" class="btn btn-simple btn-icon-arrow-right"><?php echo __("Voir tous les événements de RHEVER", "rhever"); ?></a>
         </div>

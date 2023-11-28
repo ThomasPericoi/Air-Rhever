@@ -21,7 +21,7 @@
 <!-- Loop -->
 <section id="issues-index">
     <div class="container">
-        <?php if (have_posts() && is_user_logged_in()) : ?>
+        <?php if (have_posts()) : ?>
             <div class="rainbow-grid grid-1 issues">
                 <?php
                 while (have_posts()) : the_post(); ?>
@@ -34,7 +34,7 @@
                 <?php endwhile; ?>
             </div>
             <?php the_posts_pagination(); ?>
-        <?php else : echo __('Il n\'y a aucune publication de publiée pour le moment, ou bien vous n\'êtes pas connecté.', 'rhever');
+        <?php else : echo __('Il n\'y a aucune publication de publiée pour le moment.', 'rhever');
         endif; ?>
     </div>
 </section>

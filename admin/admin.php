@@ -108,6 +108,9 @@ function manage_user_roles()
     add_role('clinic-director', 'Chef de clinique', array(
         'read' => true
     ));
+    add_role('other', 'Autre', array(
+        'read' => true
+    ));
 }
 add_action('init', 'manage_user_roles');
 
