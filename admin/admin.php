@@ -46,6 +46,7 @@ function register_custom_taxonomy()
             'show_in_rest' => true,
             'query_var' => true,
             'hierarchical' => true,
+            'rewrite' => array('slug' => 'type'),
         )
     );
 }
