@@ -45,6 +45,14 @@
     margin-top: 0.65em;
 }
 
+/* Medias */
+.formatted video {
+	width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: block;
+}
+
 /* Quote */
 .wp-block-quote {
     position: relative;
