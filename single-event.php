@@ -18,6 +18,7 @@ $program = get_field("event_program");
 $quiz = get_field("event_quiz");
 $report = get_field("event_report");
 $quiz_results = get_field("event_quiz_results");
+$quiz_results_alt = get_field("event_quiz_results_alt");
 $bibliographies = get_field("event_bibliographies");
 $references = get_field("event_references");
 ?>
@@ -61,6 +62,12 @@ $references = get_field("event_references");
             </div>
         <?php endif; ?>
         <?php the_content(); ?>
+		<?php if ($program) : ?>
+			<div class="program formatted">
+				<h2><?php echo __("Ordre du jour", "rhever"); ?></h2>
+				<?php echo $program; ?>
+			</div>
+        <?php endif; ?>
         <?php if (get_field('event_date', false, false) < date('Ymd')) : ?>
             <!-- After -->
             <?php if ($report) : ?>
@@ -70,12 +77,17 @@ $references = get_field("event_references");
                     <a href="<?php echo $report["url"]; ?>" target="_blank"><span class="extension"><?php echo pathinfo($report["url"], PATHINFO_EXTENSION); ?></span><?php echo $report["title"]; ?></a>
                 </div>
             <?php endif; ?>
-            <?php if ($quiz_results) : ?>
+            <?php if (($quiz_results) || ($quiz_results_alt)) : ?>
                 <div class="documents-list">
                     <h2><?php echo __("Résultat du questionnaire", "rhever"); ?></h2>
-                    <?php echo do_shortcode('[pdfjs-viewer url=' . $quiz_results["url"] . ' viewer_width=100% viewer_height=1000px download=true print=true]'); ?>
-                    <a href="<?php echo $quiz_results["url"]; ?>" target="_blank"><span class="extension"><?php echo pathinfo($quiz_results["url"], PATHINFO_EXTENSION); ?></span><?php echo $quiz_results["title"]; ?></a>
-                </div>
+					<?php if ($quiz_results) : ?>
+                    	<?php echo do_shortcode('[pdfjs-viewer url=' . $quiz_results["url"] . ' viewer_width=100% viewer_height=1000px download=true print=true]'); ?>
+                    	<a href="<?php echo $quiz_results["url"]; ?>" target="_blank"><span class="extension"><?php echo pathinfo($quiz_results["url"], PATHINFO_EXTENSION); ?></span><?php echo $quiz_results["title"]; ?></a>
+					<?php endif; ?>
+					<?php if ($quiz_results_alt) : ?>
+						<a class="btn btn-secondary btn-icon-external-link" target="_blank" href="<?php echo $quiz_results_alt; ?>">Lien vers les résultats</a>
+                	<?php endif; ?>
+				</div>
             <?php endif; ?>
             <?php if ($bibliographies) : ?>
                 <div class="documents-list">
@@ -100,12 +112,6 @@ $references = get_field("event_references");
             <?php endif; ?>
         <?php else : ?>
             <!-- Before -->
-            <?php if ($program) : ?>
-                <div class="program formatted">
-                    <h2><?php echo __("Ordre du jour", "rhever"); ?></h2>
-                    <?php echo $program; ?>
-                </div>
-            <?php endif; ?>
             <?php if ($quiz) : ?>
                 <div class="quiz">
                     <h2><?php echo __("Questionnaire à remplir", "rhever"); ?></h2>

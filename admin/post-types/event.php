@@ -9,7 +9,7 @@ $labels = [
     'view_item' => __('Voir l\'événement', 'rhever'),
     'search_items' => __('Chercher un événement', 'rhever'),
     'not_found' =>  __('Aucun événement de trouvé.', 'rhever'),
-    'all_items' => __('Tous les événement', 'rhever'),
+    'all_items' => __('Tous les événements', 'rhever'),
     'not_found_in_trash' => __('Aucun événement dans la corbeille.', 'rhever'),
     'parent_item_colon' => __('', 'rhever'),
 ];
